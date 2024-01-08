@@ -1,0 +1,35 @@
+syntax = "proto2";
+
+enum ObjType
+{
+  OBJ_TYPE_NONE = 0;
+  RESERVED_1 = 1;
+  RESERVED_2 = 2;
+  RESERVED_3 = 3;
+  OBJ_TYPE_BINARY_INPUT = 4;
+  OBJ_TYPE_BINARY_OUTPUT = 5;
+  OBJ_TYPE_BINARY_COUNTER = 6;
+  OBJ_TYPE_ANALOG_INPUT = 7;
+  OBJ_TYPE_ANALOG_OUTPUT = 8;
+  OBJ_TYPE_FILE = 9;
+}
+
+//---------------------------------
+
+message ValObj
+{
+  optional uint32 point 	= 1;
+  optional int32 iValue 	= 2;
+  optional float fValue		= 3;
+  optional int64 timestamp	= 4;  // number of milliseconds since 00:00:00 1/1/1970
+  optional bool online		= 5;
+}
+
+message ObjectValues
+{
+  optional ObjType objType 	= 1;
+  repeated ValObj  objValues	= 2; // list of points <point, value, timestamp>
+}
+
+//---------------------------------
+
