@@ -1,0 +1,124 @@
+syntax = "proto2";
+
+//---------------------------------
+
+enum TDnp3ObjectType_ { 
+  OBJ_BINARY_ = 1;
+  OBJ_COUNTER_ = 2;
+  OBJ_ANALOG_ = 3;
+  OBJ_COMMAND_ = 4;
+  OBJ_REGULATION_ = 5;
+  OBJ_NONE_ = 6;
+} 
+
+enum TModbusTypeConn_ {
+  TCP_ = 1;
+  RTU_ = 2;
+  RTU_TCP_ = 3;
+} 
+
+message Dnp3Parms 
+{
+  required uint32 outstation_id = 1;
+  
+  required string ip1 = 2;
+  required string ip2 = 3;
+  required string ip3 = 4;
+  
+  required uint32 port1 = 5;
+  required uint32 port2 = 6;
+  required uint32 port3 = 7;
+  
+  required uint32 uns_conn_token = 8;
+  required uint32 uns_addr = 9;
+  
+  required uint32 master_id1 = 10;
+  required uint32 master_id2 = 11;
+  required uint32 master_id3 = 12;
+  
+  required uint32 analog_out_point_offset = 13;
+  required uint32 binary_in_confirm_cmd = 14;
+  
+  required uint32 failure_point = 15;
+  required int32 dnp3_failure_point_val = 16;
+  required bool check_failure = 17;
+  required TDnp3ObjectType_ dnp3_failure_point_type = 18;
+  
+  
+  /*
+  optional uint64 id = 1;       
+  optional uint32 dnp3Addr = 2;
+  optional uint32 integrityInterval = 3;  
+  optional bool class1 = 4;
+  optional bool class2 = 5;
+  optional bool class3 = 6;
+  optional uint32 classInterval = 7;
+  optional int64 timeout = 8;
+  optional int64 offLineTimeout = 9;
+  */
+  
+}
+
+message ModbusParms
+{
+  required TModbusTypeConn_ mode = 1;
+  required string ip = 2;
+  required uint32 port = 3;
+  
+  required uint32 baud_rate = 4;
+  required uint32 num_devs = 5;
+  required uint32 addr = 6;
+  required string device = 7;
+  required string address_list = 8;
+  
+  required uint32 timeout = 9;
+  required uint32 inter_polling = 10;
+  required uint32 intra_polling = 11;
+  required uint32 retry_timeout = 12;
+  required uint32 retries = 13;
+  
+  required uint32 poll_trigger = 14;
+  required string trigger_path = 15;
+  
+}
+
+message EquipClass
+{
+  required uint32 classId = 1;
+  required uint32 typeId = 2;
+  required uint32 mapId = 3;
+  required string name = 4;
+  required string version = 5;
+  required string classmap_description = 6;
+  required string classmap_path = 7;
+}
+
+message Device
+{
+  required string name = 1;
+  required string manufacturer = 2;
+  required string model = 3;
+  required uint32 class_id = 4;
+  required uint32 ug = 5;
+  required ModbusParms modbus_cfg = 6;
+  required Dnp3Parms dnp3_cfg = 7;
+  required EquipClass classmap = 8;
+  
+}
+//---------------------------------
+
+message ConfigGateway
+{
+  repeated Device devices	= 1;
+}
+//---------------------------------
+
+message ConfigGatewayResponse
+{
+  required uint32 numDevicesCfg	=1;
+  required bool success		=2;
+  optional string errMsg	=3;
+}
+//---------------------------------
+
+
