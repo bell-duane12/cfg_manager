@@ -16,7 +16,8 @@ Dnp3_Modbus_Relay_Config_Manager::Dnp3_Modbus_Relay_Config_Manager(const std::st
   
   cout << "Configuration loaded from '"  << cfg_filename << "': version = "
        << cfg_reader.Get("config","version","unknown") << endl << endl;
-       
+   
+   
   if(!load_modbus_cfg_from_file())
     throw std::runtime_error("Unable to load Modbus configuration from config file");
   cout << "Modbus configuration loaded..." << endl;
@@ -26,9 +27,6 @@ Dnp3_Modbus_Relay_Config_Manager::Dnp3_Modbus_Relay_Config_Manager(const std::st
   if(!load_dnp3_cfg_from_file())
     throw std::runtime_error("Unable to load DNP3 configuration from config file");
   cout << "Dnp3 configuration loaded..." << endl;
-  if (!load_maps_from_file())
-    throw std::runtime_error("Unable to load MODBUS/DNP3 maps from config file");
-  cout << "Maps configuration loaded..." << endl;
   if(!load_broker_cfg_from_file()) {
     //throw std::system_error();
     broker_config.gateway_id = 0;
@@ -92,7 +90,9 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_cfg_from_file() {
   modbus_config.numDevs = cfg_reader.GetInteger("modbus", "numDevs", -1);
   if ((modbus_config.numDevs < 1) || (modbus_config.numDevs > MAX_MODBUS_DEVICES))
     return false;
-  
+
+  //TODO:    
+/*  
   //Carrega a lista de endereeços modbus do barramento
   for (idx = 0; idx < modbus_config.numDevs; idx++)
     modbus_config.addressList[idx] = modbus_config.address + idx;
@@ -123,7 +123,7 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_cfg_from_file() {
       }
     }
   }
-  
+*/  
   modbus_config.timeout = cfg_reader.GetReal("modbus", "timeout", 1);
   if ((modbus_config.timeout == 0) || (modbus_config.timeout > 10))
     modbus_config.timeout = 0.750;

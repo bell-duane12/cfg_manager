@@ -1,6 +1,8 @@
 #include <iostream>
 #include <utility>
+
 #include "srv.h"
+#include "dnp3_modbus_relay_config_manager.hpp"
 
 int main(int argc, char* argv[]) {
 
@@ -13,6 +15,9 @@ int main(int argc, char* argv[]) {
 
   MqttServerWrapper c(argv[1], atoi(argv[2]), argv[3], argv[4], atoi(argv[5]));
 
+  Dnp3_Modbus_Relay_Config_Manager("utr3288io.cfg");
+
+/*
   std::vector<TEtsListConfig> etsConfigList(22); // 22 devices
   //std::vector<TEtsListConfig> etsConfigList(1); // 1 device
 
@@ -1212,10 +1217,10 @@ int main(int argc, char* argv[]) {
   etsConfigList[21].classmap.map_path = "utr3288io.cfg";
   etsConfigList[21].classmap.map_description = "Mapa UTR3288io";
   // -------------- 
-                        
+*/                        
   if(c.is_connected()) {
 
-    c.configEts(11, etsConfigList);
+    //c.configEts(11, etsConfigList);
 
   }
 
