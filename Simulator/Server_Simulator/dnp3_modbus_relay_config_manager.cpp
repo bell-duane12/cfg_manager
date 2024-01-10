@@ -315,6 +315,10 @@ TFailureConfig Dnp3_Modbus_Relay_Config_Manager::get_failure_config() {
   return failure_config;
 }
 
+TEtsListConfig Dnp3_Modbus_Relay_Config_Manager::get_equipment_and_class_config() {
+  return equipment_and_class_config;
+}
+
 bool Dnp3_Modbus_Relay_Config_Manager::load_broker_cfg_from_file() {
 
   broker_config.gateway_id = cfg_reader.GetInteger("broker", "id", -1);
