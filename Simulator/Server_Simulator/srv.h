@@ -74,18 +74,19 @@ typedef struct {
 } TModbusParms;
 
 typedef struct {
+
+  std::string version;
   unsigned int classId;
   unsigned int typeId;
   unsigned int mapId;
   std::string name;
-  std::string version;
   std::string map_path;
   std::string map_description;
+  
 } TEtsClass;
 
 typedef struct {
 
-  unsigned int seq;
   std::string name;
   std::string manufacturer;
   std::string model;

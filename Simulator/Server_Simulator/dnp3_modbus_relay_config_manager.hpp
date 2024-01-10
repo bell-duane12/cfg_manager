@@ -6,6 +6,7 @@
 
 #include "dnp3_modbus_types.hpp"
 #include "common_types.hpp"
+#include "srv.h"
 
 class Dnp3_Modbus_Relay_Config_Manager
 {

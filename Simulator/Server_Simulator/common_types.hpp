@@ -20,5 +20,4 @@ typedef struct {
   unsigned int pubInterval;
 } TBrokerConfig;
 
-
 #endif
