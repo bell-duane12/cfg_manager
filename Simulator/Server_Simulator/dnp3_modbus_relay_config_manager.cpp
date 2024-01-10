@@ -15,7 +15,7 @@ Dnp3_Modbus_Relay_Config_Manager::Dnp3_Modbus_Relay_Config_Manager(const std::st
   cfg_reader(cfg_filename) {
   
   cout << "Configuration loaded from '"  << cfg_filename << "': version = "
-       << cfg_reader.Get("config","version","unknown") << endl << endl;
+       << cfg_reader.Get("classmap","version","unknown") << endl << endl;
    
    
   if(!load_modbus_cfg_from_file())
@@ -41,6 +41,9 @@ Dnp3_Modbus_Relay_Config_Manager::Dnp3_Modbus_Relay_Config_Manager(const std::st
   if (!load_classmap_cfg_from_file()) 
     throw std::runtime_error("Unable to load Classmap configuration from config file");
   cout << "Classmap configuration loaded..." << endl;    
+  if (!load_equipment_cfg_from_file()) 
+    throw std::runtime_error("Unable to load Equipment configuration from config file");
+  cout << "Equipment configuration loaded..." << endl;    
 }
 
 bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_cfg_from_file() {
@@ -342,27 +345,48 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_broker_cfg_from_file() {
 
 bool Dnp3_Modbus_Relay_Config_Manager::load_classmap_cfg_from_file() {
 
-  equipment_and_class_config.classmap.version = cfg_reader.Get("config", "version", "error");
+  equipment_and_class_config.classmap.version = cfg_reader.Get("classmap", "version", "error");
   if (equipment_and_class_config.classmap.version.compare("error") == 0)
     return false;
-  equipment_and_class_config.classmap.classId = cfg_reader.GetInteger("config", "classId", -1);
-  if (equipment_and_class_config.classmap.classId < 0)
+  equipment_and_class_config.classmap.classId = cfg_reader.GetInteger("classmap", "classId", 0);
+  equipment_and_class_config.class_id = equipment_and_class_config.classmap.classId;
+  if (equipment_and_class_config.classmap.classId == 0)
     return false;
-  equipment_and_class_config.classmap.typeId = cfg_reader.GetInteger("config", "typeId", -1);
-  if (equipment_and_class_config.classmap.typeId < 0)
+  equipment_and_class_config.classmap.typeId = cfg_reader.GetInteger("classmap", "typeId", 0);
+  if (equipment_and_class_config.classmap.typeId == 0)
     return false;
-  equipment_and_class_config.classmap.mapId = cfg_reader.GetInteger("config", "mapId", -1);
-  if (equipment_and_class_config.classmap.mapId < 0)
+  equipment_and_class_config.classmap.mapId = cfg_reader.GetInteger("classmap", "mapId", 0);
+  if (equipment_and_class_config.classmap.mapId == 0)
     return false;
-  equipment_and_class_config.classmap.name = cfg_reader.Get("config", "name", "error");
+  equipment_and_class_config.classmap.name = cfg_reader.Get("classmap", "name", "error");
   if (equipment_and_class_config.classmap.name.compare("error") == 0)
     return false;
-  equipment_and_class_config.classmap.map_path = cfg_reader.Get("config", "map_path", "error");
+  equipment_and_class_config.classmap.map_path = cfg_reader.Get("classmap", "map_path", "error");
   if (equipment_and_class_config.classmap.map_path.compare("error") == 0)
     return false;
-  equipment_and_class_config.classmap.map_description = cfg_reader.Get("config", "map_description", "error");
+  equipment_and_class_config.classmap.map_description = cfg_reader.Get("classmap", "map_description", "error");
   if (equipment_and_class_config.classmap.map_description.compare("error") == 0)
     return false;
+
+  return true;
+  
+}
+
+bool Dnp3_Modbus_Relay_Config_Manager::load_equipment_cfg_from_file() {
+
+  equipment_and_class_config.name = cfg_reader.Get("equipment", "name", "error");
+  if (equipment_and_class_config.name.compare("error") == 0)
+    return false;
+  equipment_and_class_config.manufacturer = cfg_reader.Get("equipment", "manufacturer", "error");
+  if (equipment_and_class_config.manufacturer.compare("error") == 0)
+    return false;
+  equipment_and_class_config.model = cfg_reader.Get("equipment", "model", "error");
+  if (equipment_and_class_config.model.compare("error") == 0)
+    return false;
+  equipment_and_class_config.ug = cfg_reader.GetInteger("equipment", "ug", 0);
+  if (equipment_and_class_config.ug == 0)
+    return false;
+
 
   return true;
   

@@ -110,6 +110,7 @@ class Dnp3_Modbus_Relay_Config_Manager
 
 
     bool load_classmap_cfg_from_file();    
+    bool load_equipment_cfg_from_file();
     
   private:
     INIReader cfg_reader;       ///< Objeto responsável pela leitura da configuração
