@@ -6,6 +6,7 @@
 #include <string>
 #include <algorithm>
 #include <system_error>
+#include <sstream>
 
 
 using namespace std;
@@ -98,39 +99,17 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_cfg_from_file() {
   if ((modbus_config.numDevs < 1) || (modbus_config.numDevs > MAX_MODBUS_DEVICES))
     return false;
 
-  //TODO:    
-/*  
-  //Carrega a lista de endereeços modbus do barramento
-  for (idx = 0; idx < modbus_config.numDevs; idx++)
-    modbus_config.addressList[idx] = modbus_config.address + idx;
   _addList = cfg_reader.Get("modbus", "addressList", "error");
-  if (_addList.compare("error") != 0) {
-
-    cout << "Address list: " << _addList << endl;
-    idx = 0;
-    while ((idx < modbus_config.numDevs) && (!done)) {
-      //Populando o mapa de endereços Modbus
-      pos = _addList.find(delim2);
-      if (pos != std::string::npos) {
-        token = _addList.substr(0, pos);
-        modbus_config.addressList[idx] = stoul(token);
-        _addList.erase(0, pos + delim2.length());
-        cout << "address[" << idx << "]: " << modbus_config.addressList[idx] << endl;
-        idx++;
-      }
-      else {
-        pos = _addList.find(delim3);
-        if (pos != std::string::npos) {
-          token = _addList.substr(0, pos);
-          modbus_config.addressList[idx] = stoul(token);
-          cout << "address[" << idx << "]: " << modbus_config.addressList[idx] << endl;
-          idx++;
-        }
-        done = true;
-      }
-    }
+  if (_addList.compare("error") == 0) 
+    return false;
+    
+  // Carrega a lista de endereços modbus do barramento
+  auto addrVec = extractIntegerWords(_addList);
+  
+  for (const auto& addr : addrVec) {
+    modbus_config.addressList.push_back(addr);      
   }
-*/  
+     
   modbus_config.timeout = cfg_reader.GetReal("modbus", "timeout", 1);
   if ((modbus_config.timeout == 0) || (modbus_config.timeout > 10))
     modbus_config.timeout = 0.750;
@@ -394,6 +373,38 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_equipment_cfg_from_file() {
 
   return true;
   
+}
+
+std::vector<short unsigned int> Dnp3_Modbus_Relay_Config_Manager::extractIntegerWords(std::string str) {
+
+  stringstream ss;
+ 
+  std::vector<short unsigned int> vecList;
+    
+  /* Storing the whole string into string stream */
+  ss << str;
+ 
+  /* Running loop till the end of the stream */
+  string temp;
+  short unsigned int found;
+  while (!ss.eof()) {
+ 
+    /* extracting word by word from stream */
+    ss >> temp;
+ 
+    /* Checking the given word is integer or not */
+    if (stringstream(temp) >> found) {
+      //cout << found << " ";
+      vecList.push_back(found);    
+    }
+ 
+    /* To save from space at the end of string */
+    temp = "";
+  }
+  
+  //cout << "" << endl;
+      
+  return vecList;
 }
 
 

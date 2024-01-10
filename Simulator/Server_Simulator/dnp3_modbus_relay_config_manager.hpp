@@ -112,6 +112,7 @@ class Dnp3_Modbus_Relay_Config_Manager
     bool load_classmap_cfg_from_file();    
     bool load_equipment_cfg_from_file();
     TEtsListConfig get_equipment_and_class_config();
+    std::vector<short unsigned int> extractIntegerWords(std::string str);
     
   private:
     INIReader cfg_reader;       ///< Objeto responsável pela leitura da configuração
