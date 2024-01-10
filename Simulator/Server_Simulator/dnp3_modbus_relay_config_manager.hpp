@@ -2,12 +2,10 @@
 #ifndef _DNP3_MODBUS_RELAY_CONFIG_MANAGER_HPP_
 #define _DNP3_MODBUS_RELAY_CONFIG_MANAGER_HPP_
 
-#include "INIReader.h"
+#include "inih/INIReader.h"
+
 #include "dnp3_modbus_types.hpp"
-//#include "dnp3_object_manager.hpp"
-//#include "dnp3_comm_session.hpp"
-//#include "broker.hpp"
-#include "mqtt_connection.hpp"
+#include "common_types.hpp"
 
 class Dnp3_Modbus_Relay_Config_Manager
 {

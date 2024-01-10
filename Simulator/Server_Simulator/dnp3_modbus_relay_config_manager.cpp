@@ -1,18 +1,19 @@
 
 #include "dnp3_modbus_relay_config_manager.hpp"
 #include "dnp3_modbus_types.hpp"
-#include "INIReader.h"
+
 #include <iostream>
 #include <string>
 #include <algorithm>
 #include <system_error>
 
+
 using namespace std;
 
 
 Dnp3_Modbus_Relay_Config_Manager::Dnp3_Modbus_Relay_Config_Manager(const std::string cfg_filename):
-  cfg_reader(cfg_filename)
-{
+  cfg_reader(cfg_filename) {
+  
   cout << "Configuration loaded from '"  << cfg_filename << "': version = "
        << cfg_reader.Get("config","version","unknown") << endl << endl;
        
@@ -37,11 +38,11 @@ Dnp3_Modbus_Relay_Config_Manager::Dnp3_Modbus_Relay_Config_Manager(const std::st
     failure_config.Enabled = false;
   }
   cout << "Failure configuration loaded..." << endl;
+  
 }
 
+bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_cfg_from_file() {
 
-bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_cfg_from_file()
-{
   uint8_t idx;
   string _addList;
   string token;
@@ -128,11 +129,11 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_cfg_from_file()
     modbus_config.timeout = 0.750;
   
   return true;
+  
 }
 
+bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_poller_cfg_from_file() {
 
-bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_poller_cfg_from_file()
-{
   modbus_poller_config.inter_polling = cfg_reader.GetInteger("modbus_poller", "InterPolling", -1);
   if (modbus_poller_config.inter_polling < 0)
     return false;
@@ -151,11 +152,11 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_poller_cfg_from_file()
     return false;
 
   return true;
+  
 }
 
+bool Dnp3_Modbus_Relay_Config_Manager::load_dnp3_cfg_from_file() {
 
-bool Dnp3_Modbus_Relay_Config_Manager::load_dnp3_cfg_from_file()
-{
   //OBS: GetFields retorna os campos de uma seção em ordem alfabética
   auto dnp3_fields = cfg_reader.GetFields("dnp3");
 /*
@@ -252,11 +253,11 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_dnp3_cfg_from_file()
   }
 
   return true;
+  
 }
 
+bool Dnp3_Modbus_Relay_Config_Manager::load_failure_cfg_from_file() {
 
-bool Dnp3_Modbus_Relay_Config_Manager::load_failure_cfg_from_file()
-{
   string type;
   
   failure_config.Enabled = cfg_reader.GetBoolean("Failure","CheckFailure",false);
@@ -272,54 +273,43 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_failure_cfg_from_file()
   failure_config.data.point = cfg_reader.GetInteger("Failure","Dnp3FailurePoint",-1);
   failure_config.data.value = cfg_reader.GetInteger("Failure","Dnp3FailurePointValue",-1);
   return true;
+  
 }
 
-TModbusSlaveConfig Dnp3_Modbus_Relay_Config_Manager::get_modbus_slave_config()
-{
+TModbusSlaveConfig Dnp3_Modbus_Relay_Config_Manager::get_modbus_slave_config() {
   return modbus_config;
 }
 
-
-TModbusPollerConfig Dnp3_Modbus_Relay_Config_Manager::get_modbus_poller_config()
-{
+TModbusPollerConfig Dnp3_Modbus_Relay_Config_Manager::get_modbus_poller_config() {
   return modbus_poller_config;
 }
 
-uint16_t Dnp3_Modbus_Relay_Config_Manager::get_dnp3_slave_address()
-{
+uint16_t Dnp3_Modbus_Relay_Config_Manager::get_dnp3_slave_address() {
   return dnp3_device_config.Dnp3SlaveAddress;
 }
 
-TDnp3Config Dnp3_Modbus_Relay_Config_Manager::get_dnp3_device_config()
-{
+TDnp3Config Dnp3_Modbus_Relay_Config_Manager::get_dnp3_device_config() {
   return dnp3_device_config;
 }
 
-
-unsigned int Dnp3_Modbus_Relay_Config_Manager::get_dnp3_connections_count()
-{
+unsigned int Dnp3_Modbus_Relay_Config_Manager::get_dnp3_connections_count() {
   return dnp3_connections_data.size();
 }
 
-std::vector<TDnp3MasterConnectionData> Dnp3_Modbus_Relay_Config_Manager::get_dnp3_connections_data()
-{
+std::vector<TDnp3MasterConnectionData> Dnp3_Modbus_Relay_Config_Manager::get_dnp3_connections_data() {
   return dnp3_connections_data;
 }
 
-TBrokerConfig Dnp3_Modbus_Relay_Config_Manager::get_broker_config()
-{
+TBrokerConfig Dnp3_Modbus_Relay_Config_Manager::get_broker_config() {
   return broker_config;
 }
 
-TFailureConfig Dnp3_Modbus_Relay_Config_Manager::get_failure_config()
-{
+TFailureConfig Dnp3_Modbus_Relay_Config_Manager::get_failure_config() {
   return failure_config;
 }
 
-//bool Dnp3_Modbus_Relay_Config_Manager::load_maps_from_file(std::map< unsigned int, TModbusData >& index_to_modbus_data_map,
-//                                                           std::map< unsigned int, TDnp3Data >& index_to_dnp3_data_map)
-bool Dnp3_Modbus_Relay_Config_Manager::load_maps_from_file()
-{
+bool Dnp3_Modbus_Relay_Config_Manager::load_maps_from_file() {
+
   TModbusData mbData;
   TDnp3Data dnpData;
   unsigned int idx = 0;
@@ -534,10 +524,11 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_maps_from_file()
   retCode = true;
   
   return retCode;
+  
 }
 
-bool Dnp3_Modbus_Relay_Config_Manager::load_broker_cfg_from_file()
-{
+bool Dnp3_Modbus_Relay_Config_Manager::load_broker_cfg_from_file() {
+
   broker_config.gateway_id = cfg_reader.GetInteger("broker", "id", -1);
   if (broker_config.gateway_id < 0)
     return false;
@@ -561,15 +552,6 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_broker_cfg_from_file()
     broker_config.pubInterval = 60;
 
   return true;
+  
 }
 
-
-std::string Dnp3_Modbus_Relay_Config_Manager::get_config_log_file_name()
-{
-  return cfg_reader.Get("config", "logfile", "/dev/null");
-}
-
-std::string Dnp3_Modbus_Relay_Config_Manager::get_config_log_level()
-{
-  return cfg_reader.Get("config", "loglevel", "never");
-}

@@ -8,7 +8,7 @@ LDFLAGS += -pthread -Wl,--no-as-needed
 LDLIBS= -lprotobuf -lmosquittopp -lmosquitto
 
 SRCS=$(wildcard *.cpp)
-SRCS += $(wildcard ../protobuf_api/out/*.cpp)
+SRCS += $(wildcard ../protobuf_api/out/*.cpp inih/*.c inih/*.cpp)
 OBJS=$(subst .cpp,.o,$(SRCS))
 
 all: $(PROGRAM_NAME)
