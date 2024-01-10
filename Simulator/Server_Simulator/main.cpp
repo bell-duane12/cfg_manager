@@ -15,8 +15,12 @@ int main(int argc, char* argv[]) {
 
   MqttServerWrapper c(argv[1], atoi(argv[2]), argv[3], argv[4], atoi(argv[5]));
 
-  Dnp3_Modbus_Relay_Config_Manager("utr3288io.cfg"); // Arquivo de teste
+  Dnp3_Modbus_Relay_Config_Manager cfg("utr3288io.cfg"); // Arquivo de teste
 
+  std::vector<TEtsListConfig> etsConfigList(1); 
+  
+  etsConfigList[0] = cfg.get_config();
+  
 /*
   std::vector<TEtsListConfig> etsConfigList(22); // 22 devices
   //std::vector<TEtsListConfig> etsConfigList(1); // 1 device
@@ -1220,7 +1224,7 @@ int main(int argc, char* argv[]) {
 */                        
   if(c.is_connected()) {
 
-    //c.configEts(11, etsConfigList);
+    c.configEts(11, etsConfigList);
 
   }
 

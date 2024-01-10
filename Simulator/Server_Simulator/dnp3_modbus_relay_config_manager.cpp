@@ -102,18 +102,24 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_cfg_from_file() {
   _addList = cfg_reader.Get("modbus", "addressList", "error");
   if (_addList.compare("error") == 0) 
     return false;
-    
-  // Carrega a lista de endereços modbus do barramento
-  auto addrVec = extractIntegerWords(_addList);
-  
-  for (const auto& addr : addrVec) {
-    modbus_config.addressList.push_back(addr);      
-  }
-     
+       
   modbus_config.timeout = cfg_reader.GetReal("modbus", "timeout", 1);
   if ((modbus_config.timeout == 0) || (modbus_config.timeout > 10))
     modbus_config.timeout = 0.750;
-  
+
+  //TODO: checar
+  etsConfigList.modbus_cfg.mode = (TModbusTypeConn) modbus_config.type; 
+  etsConfigList.modbus_cfg.addr = modbus_config.address;
+  etsConfigList.modbus_cfg.ip = modbus_config.ip;
+  if (type.compare("RTU") != 0) {
+    etsConfigList.modbus_cfg.port = std::stoi(modbus_config.port);
+  }
+  etsConfigList.modbus_cfg.device = modbus_config.device;
+  etsConfigList.modbus_cfg.baud_rate = modbus_config.baud;    //TODO: check db type
+  etsConfigList.modbus_cfg.num_devs = modbus_config.numDevs;
+  etsConfigList.modbus_cfg.address_list = _addList;
+  etsConfigList.modbus_cfg.timeout = modbus_config.timeout;
+    
   return true;
   
 }
@@ -137,6 +143,14 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_poller_cfg_from_file() {
   if ((modbus_poller_config.semaphore_FileName.compare("error") == 0) && (modbus_poller_config.poll_Semaphore == true))
     return false;
 
+
+  etsConfigList.modbus_cfg.inter_polling = modbus_poller_config.inter_polling;
+  etsConfigList.modbus_cfg.intra_polling = modbus_poller_config.intra_polling;
+  etsConfigList.modbus_cfg.retry_timeout = modbus_poller_config.retry_timeout;
+  etsConfigList.modbus_cfg.retries = modbus_poller_config.retries;
+  etsConfigList.modbus_cfg.poll_trigger = modbus_poller_config.poll_Semaphore;
+  etsConfigList.modbus_cfg.trigger_path = modbus_poller_config.semaphore_FileName;
+  
   return true;
   
 }
@@ -238,6 +252,34 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_dnp3_cfg_from_file() {
     dnp3_connections_data.push_back(it->second);
   }
 
+
+  etsConfigList.dnp3_cfg.analog_out_point_offset = dnp3_device_config.Dnp3AnalogOutputPointOffsset;
+  etsConfigList.dnp3_cfg.binary_in_confirm_cmd = dnp3_device_config.Dnp3BinaryInputConfirmCommand;
+  etsConfigList.dnp3_cfg.outstation_id = dnp3_device_config.Dnp3SlaveAddress;
+  
+  if (dnp3_connections_map.empty())
+    throw std::system_error();
+      
+  etsConfigList.dnp3_cfg.master_id1 = dnp3_connections_map["1"].master_addr;
+  etsConfigList.dnp3_cfg.ip1 = dnp3_connections_map["1"].ip;
+  etsConfigList.dnp3_cfg.port1 = dnp3_connections_map["1"].port;
+
+  if (dnp3_connections_map.size() > 1) {  
+    etsConfigList.dnp3_cfg.master_id2 = dnp3_connections_map["2"].master_addr;
+    etsConfigList.dnp3_cfg.ip2 = dnp3_connections_map["2"].ip;
+    etsConfigList.dnp3_cfg.port2 = dnp3_connections_map["2"].port;
+  }
+  
+  if (dnp3_connections_map.size() > 2) {
+    etsConfigList.dnp3_cfg.master_id2 = dnp3_connections_map["3"].master_addr;
+    etsConfigList.dnp3_cfg.ip2 = dnp3_connections_map["3"].ip;
+    etsConfigList.dnp3_cfg.port2 = dnp3_connections_map["3"].port;
+  }
+  
+  etsConfigList.dnp3_cfg.uns_conn_token = std::stoi(unsolicited_conn_token); 
+  etsConfigList.dnp3_cfg.uns_addr = dnp3_device_config.Dnp3UnsolicitedAddress;
+  
+  
   return true;
   
 }
@@ -258,6 +300,13 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_failure_cfg_from_file() {
     failure_config.data.type = _NONE;
   failure_config.data.point = cfg_reader.GetInteger("Failure","Dnp3FailurePoint",-1);
   failure_config.data.value = cfg_reader.GetInteger("Failure","Dnp3FailurePointValue",-1);
+  
+  //TODO: check data types
+  etsConfigList.dnp3_cfg.check_failure = failure_config.Enabled;
+  etsConfigList.dnp3_cfg.dnp3_failure_point_type = (TDnp3ObjectType) failure_config.data.type; //TODO: check if enums match
+  etsConfigList.dnp3_cfg.failure_point = failure_config.data.point;    
+  etsConfigList.dnp3_cfg.dnp3_failure_point_val = failure_config.data.value; 
+  
   return true;
   
 }
@@ -294,8 +343,8 @@ TFailureConfig Dnp3_Modbus_Relay_Config_Manager::get_failure_config() {
   return failure_config;
 }
 
-TEtsListConfig Dnp3_Modbus_Relay_Config_Manager::get_equipment_and_class_config() {
-  return equipment_and_class_config;
+TEtsListConfig Dnp3_Modbus_Relay_Config_Manager::get_config() {
+  return etsConfigList; //equipment_and_class_config;
 }
 
 bool Dnp3_Modbus_Relay_Config_Manager::load_broker_cfg_from_file() {
@@ -351,6 +400,15 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_classmap_cfg_from_file() {
   if (equipment_and_class_config.classmap.map_description.compare("error") == 0)
     return false;
 
+  etsConfigList.classmap.version = equipment_and_class_config.classmap.version;
+  etsConfigList.classmap.classId = equipment_and_class_config.classmap.classId;
+  etsConfigList.classmap.typeId = equipment_and_class_config.classmap.typeId;
+  etsConfigList.classmap.mapId = equipment_and_class_config.classmap.mapId;
+  etsConfigList.classmap.name = equipment_and_class_config.classmap.name;
+  etsConfigList.classmap.map_path = equipment_and_class_config.classmap.map_path;
+  etsConfigList.classmap.map_description = equipment_and_class_config.classmap.map_description;
+  etsConfigList.class_id = etsConfigList.classmap.classId;
+  
   return true;
   
 }
@@ -370,41 +428,12 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_equipment_cfg_from_file() {
   if (equipment_and_class_config.ug == 0)
     return false;
 
-
+  etsConfigList.name = equipment_and_class_config.name;
+  etsConfigList.manufacturer = equipment_and_class_config.manufacturer;
+  etsConfigList.model = equipment_and_class_config.model;
+  etsConfigList.ug = equipment_and_class_config.ug;
+  
   return true;
   
 }
-
-std::vector<short unsigned int> Dnp3_Modbus_Relay_Config_Manager::extractIntegerWords(std::string str) {
-
-  stringstream ss;
- 
-  std::vector<short unsigned int> vecList;
-    
-  /* Storing the whole string into string stream */
-  ss << str;
- 
-  /* Running loop till the end of the stream */
-  string temp;
-  short unsigned int found;
-  while (!ss.eof()) {
- 
-    /* extracting word by word from stream */
-    ss >> temp;
- 
-    /* Checking the given word is integer or not */
-    if (stringstream(temp) >> found) {
-      //cout << found << " ";
-      vecList.push_back(found);    
-    }
- 
-    /* To save from space at the end of string */
-    temp = "";
-  }
-  
-  //cout << "" << endl;
-      
-  return vecList;
-}
-
 

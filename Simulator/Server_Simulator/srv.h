@@ -57,7 +57,7 @@ typedef struct {
   unsigned int modbus_seq;
   TModbusTypeConn mode;
   unsigned int port;
-  unsigned int baud_rate;
+  /*unsigned int*/ std::string baud_rate;
   unsigned int num_devs;
   unsigned int addr;
   unsigned int timeout;
