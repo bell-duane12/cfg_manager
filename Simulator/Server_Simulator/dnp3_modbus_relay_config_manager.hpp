@@ -107,6 +107,9 @@ class Dnp3_Modbus_Relay_Config_Manager
      * Retorna configuração do servidor DNP3 especificado pelo indice
      */
     std::vector<TDnp3MasterConnectionData> get_dnp3_connections_data();
+
+
+    bool load_classmap_cfg_from_file();    
     
   private:
     INIReader cfg_reader;       ///< Objeto responsável pela leitura da configuração
@@ -131,6 +134,10 @@ class Dnp3_Modbus_Relay_Config_Manager
     
     //Contadores de tipos de objetos DNP3 (inicializado com zeros)
     TDnp3ObjectsCount dnp3_obj_count = {};
+    
+    // Configurações de Equipamento e de Classe
+    TEtsListConfig equipment_and_class_config;
+    
 };
 
 #endif

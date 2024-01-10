@@ -27,16 +27,20 @@ Dnp3_Modbus_Relay_Config_Manager::Dnp3_Modbus_Relay_Config_Manager(const std::st
   if(!load_dnp3_cfg_from_file())
     throw std::runtime_error("Unable to load DNP3 configuration from config file");
   cout << "Dnp3 configuration loaded..." << endl;
+/*
   if(!load_broker_cfg_from_file()) {
     //throw std::system_error();
     broker_config.gateway_id = 0;
   }
-  cout << "Broker configuration loaded..." << endl;
+  cout << "Broker configuration loaded..." << endl; 
+*/
   if (!load_failure_cfg_from_file()) {
     failure_config.Enabled = false;
   }
-  cout << "Failure configuration loaded..." << endl;
-  
+  cout << "Failure configuration loaded..." << endl;  
+  if (!load_classmap_cfg_from_file()) 
+    throw std::runtime_error("Unable to load Classmap configuration from config file");
+  cout << "Classmap configuration loaded..." << endl;    
 }
 
 bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_cfg_from_file() {
@@ -335,4 +339,33 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_broker_cfg_from_file() {
   return true;
   
 }
+
+bool Dnp3_Modbus_Relay_Config_Manager::load_classmap_cfg_from_file() {
+
+  equipment_and_class_config.classmap.version = cfg_reader.Get("config", "version", "error");
+  if (equipment_and_class_config.classmap.version.compare("error") == 0)
+    return false;
+  equipment_and_class_config.classmap.classId = cfg_reader.GetInteger("config", "classId", -1);
+  if (equipment_and_class_config.classmap.classId < 0)
+    return false;
+  equipment_and_class_config.classmap.typeId = cfg_reader.GetInteger("config", "typeId", -1);
+  if (equipment_and_class_config.classmap.typeId < 0)
+    return false;
+  equipment_and_class_config.classmap.mapId = cfg_reader.GetInteger("config", "mapId", -1);
+  if (equipment_and_class_config.classmap.mapId < 0)
+    return false;
+  equipment_and_class_config.classmap.name = cfg_reader.Get("config", "name", "error");
+  if (equipment_and_class_config.classmap.name.compare("error") == 0)
+    return false;
+  equipment_and_class_config.classmap.map_path = cfg_reader.Get("config", "map_path", "error");
+  if (equipment_and_class_config.classmap.map_path.compare("error") == 0)
+    return false;
+  equipment_and_class_config.classmap.map_description = cfg_reader.Get("config", "map_description", "error");
+  if (equipment_and_class_config.classmap.map_description.compare("error") == 0)
+    return false;
+
+  return true;
+  
+}
+
 
