@@ -54,19 +54,6 @@ class Dnp3_Modbus_Relay_Config_Manager
     bool load_broker_cfg_from_file();
     
     /**
-     * Carrega os mapas Dnp3 x Modbus a partir do arquivo de configuração
-     * previamente carregado
-     * @param index_to_modbus_addr_map mapa para registradores Modbus
-     * @param index_to_dnp3_data_map mapa para pontos DNP3
-     *
-     * @retval true Mapas carregados com sucesso
-     * @retval false Falha no carregamento dos mapas
-     */
-    bool load_maps_from_file();
-//    bool load_maps_from_file(std::map<unsigned int, TModbusData>& index_to_modbus_data_map,
-//                             std::map<unsigned int, TDnp3Data>& index_to_dnp3_data_map);
-
-    /**
      * Retorna dados de conexão ao slave Modbus
      */
     TModbusSlaveConfig get_modbus_slave_config();
