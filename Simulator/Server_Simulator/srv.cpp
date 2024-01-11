@@ -36,11 +36,10 @@ MqttServerWrapper::MqttServerWrapper(const char* _host, const int& _port,
   // Start thread managing connection / publishes / subscribes
   loop_start();
   
-  // loop until on_connect executes
   while (connected != CONNECTED && connected != COULD_NOT_CONNECT);
 
-  // loop until all subscriptions executes
   while (subscriptions != 2);
+  
 }
 
 MqttServerWrapper::~MqttServerWrapper() {
