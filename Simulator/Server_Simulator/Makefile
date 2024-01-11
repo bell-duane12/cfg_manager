@@ -17,5 +17,5 @@ $(PROGRAM_NAME): $(OBJS)
 	$(CXX) $(LDFLAGS) -o  $(PROGRAM_NAME) $(OBJS) $(LDLIBS)
 
 clean:
-	$(RM) *.o ../protobuf_api/out/*.o $(PROGRAM_NAME)
+	$(RM) *.o ../protobuf_api/out/*.o inih/*.o $(PROGRAM_NAME)
 
