@@ -1,5 +1,6 @@
 #include <iostream>
 #include <utility>
+#include <thread> 
 
 #include "srv.h"
 #include "dnp3_modbus_relay_config_manager.hpp"
@@ -22,14 +23,17 @@ int main(int argc, char* argv[]) {
   etsConfigList[0] = cfg.get_config();
                          
                          
-  if(c.is_connected()) {
+  //if(c.is_connected()) {
 
     c.configEts(11, etsConfigList);
 
-  }
+  //}
 
 
-  while(1);
+  while(1) {
+    //c.configEts(11, etsConfigList);
+    //std::this_thread::sleep_for(std::chrono::seconds(15));
+  };
 
   return 0;
 }

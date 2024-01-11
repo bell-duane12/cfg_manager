@@ -35,7 +35,12 @@ MqttServerWrapper::MqttServerWrapper(const char* _host, const int& _port,
 
   // Start thread managing connection / publishes / subscribes
   loop_start();
+  
+  // loop until on_connect executes
+  while (connected != CONNECTED && connected != COULD_NOT_CONNECT);
 
+  // loop until all subscriptions executes
+  while (subscriptions != 2);
 }
 
 MqttServerWrapper::~MqttServerWrapper() {
@@ -342,7 +347,7 @@ bool MqttServerWrapper::configEts(uint64_t reqId, std::vector<TEtsListConfig>& e
     // modbus config       
     d->mutable_modbus_cfg()->set_mode( (TModbusTypeConn_) el->modbus_cfg.mode );
     d->mutable_modbus_cfg()->set_port(el->modbus_cfg.port);
-    //d->mutable_modbus_cfg()->set_baud_rate(el->modbus_cfg.baud_rate); //TODO:
+    d->mutable_modbus_cfg()->set_baud_rate(9600); //(el->modbus_cfg.baud_rate); //TODO:
     d->mutable_modbus_cfg()->set_num_devs(el->modbus_cfg.num_devs);
     d->mutable_modbus_cfg()->set_addr(el->modbus_cfg.addr);
     d->mutable_modbus_cfg()->set_timeout(el->modbus_cfg.timeout);
@@ -383,7 +388,7 @@ bool MqttServerWrapper::configEts(uint64_t reqId, std::vector<TEtsListConfig>& e
 
 #ifdef ENABLE_DEBUG_CONSOLE
     //std::cout << "configEts:\n"
-      //        << upload.DebugString();
+    //          << upload.DebugString();
 #endif
 
   return (dispachUpload(upload));
