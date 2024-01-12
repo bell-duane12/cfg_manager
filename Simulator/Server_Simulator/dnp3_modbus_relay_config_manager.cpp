@@ -314,13 +314,17 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_failure_cfg_from_file() {
   failure_config.Enabled = cfg_reader.GetBoolean("Failure","CheckFailure",false);
   type = cfg_reader.Get("Failure","Dnp3FailurePointType","error");
   if (type.compare("OBJ_BINARY") == 0)
-    failure_config.data.type = BIN_INPUT;
+    //failure_config.data.type = BIN_INPUT;
+    failure_config.data.type = OBJ_BINARY;
   else if (type.compare("OBJ_COUNTER") == 0)
-    failure_config.data.type = BIN_COUNTER;
+    //failure_config.data.type = BIN_COUNTER;
+    failure_config.data.type = OBJ_COUNTER;
   else if (type.compare("OBJ_ANALOG") == 0)
-    failure_config.data.type = ANA_INPUT;
+    //failure_config.data.type = ANA_INPUT;
+    failure_config.data.type = OBJ_ANALOG;
   else
-    failure_config.data.type = _NONE;
+    //failure_config.data.type = _NONE;
+    failure_config.data.type = OBJ_NONE;
   failure_config.data.point = cfg_reader.GetInteger("Failure","Dnp3FailurePoint",-1);
   failure_config.data.value = cfg_reader.GetInteger("Failure","Dnp3FailurePointValue",-1);
   

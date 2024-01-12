@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include "srv.h"
 
 #define MAX_MODBUS_DEVICES      250
 
@@ -84,7 +85,7 @@ inline std::ostream& operator<<(std::ostream& out, const TDnp3DataType& value) {
 typedef struct {
   unsigned int point;
 //  TDnp3ObjectTypes type;
-  TDnp3DataType type;
+  /*TDnp3DataType*/ TDnp3ObjectType type;
   unsigned int dnpclass;
   unsigned long value;
 } TDnp3Data;
