@@ -35,7 +35,7 @@ MqttServerWrapper::MqttServerWrapper(const char* _host, const int& _port,
   // Broker user and password
   username_pw_set(user, passw);
 
-  // Request non-blocking connection with broker reques
+  // Request non-blocking connection with broker
   connect_async(host, port, 60);
 
   // Start thread managing connection / publishes / subscribes
@@ -319,7 +319,7 @@ bool MqttServerWrapper::configEts(uint64_t reqId, std::vector<TEtsListConfig>& e
     
   upload.set_allocated_header(h);
 
-  for (auto el = etsConfigList.begin(); el != etsConfigList.end(); el++) {
+  for (auto el = etsConfigList.begin(); el != etsConfigList.end(); ++el) {
        
     auto d = c->add_devices();
        
