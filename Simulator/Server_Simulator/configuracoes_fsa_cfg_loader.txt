@@ -1997,7 +1997,7 @@ Failure configuration loaded...
  Classmap map path = transformerFSA.cfg
  Classmap map description Mapa Transformer Treetech
 Classmap configuration loaded...
- Equipment name = transformer UG1
+ Equipment name = transformer UG2
  Equipment manufacturer = Treetech
  Equipment model = LAD
  Equipment ug = 2
@@ -2009,7 +2009,7 @@ header {
 }
 configGw {
   devices {
-    name: "transformer UG1"
+    name: "transformer UG2"
     manufacturer: "Treetech"
     model: "LAD"
     class_id: 5
