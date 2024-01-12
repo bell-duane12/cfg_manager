@@ -336,23 +336,15 @@ bool MqttServerWrapper::configEts(uint64_t reqId, std::vector<TEtsListConfig>& e
     d->mutable_dnp3_cfg()->set_ip1(el->dnp3_cfg.ip1);
     d->mutable_dnp3_cfg()->set_port1(el->dnp3_cfg.port1); 
     d->mutable_dnp3_cfg()->set_master_id1(el->dnp3_cfg.master_id1);
-    
-    if ( !(el->dnp3_cfg.ip2.empty()) ) {
-    
-      d->mutable_dnp3_cfg()->set_ip2(el->dnp3_cfg.ip2);   
-      d->mutable_dnp3_cfg()->set_port2(el->dnp3_cfg.port2);
-      d->mutable_dnp3_cfg()->set_master_id2(el->dnp3_cfg.master_id2);
       
-    } 
-    
-    if ( !(el->dnp3_cfg.ip3.empty()) ) {   
-            
-      d->mutable_dnp3_cfg()->set_ip3(el->dnp3_cfg.ip3);       
-      d->mutable_dnp3_cfg()->set_port3(el->dnp3_cfg.port3);
-      d->mutable_dnp3_cfg()->set_master_id3(el->dnp3_cfg.master_id3);
+    d->mutable_dnp3_cfg()->set_ip2(el->dnp3_cfg.ip2);   
+    d->mutable_dnp3_cfg()->set_port2(el->dnp3_cfg.port2);
+    d->mutable_dnp3_cfg()->set_master_id2(el->dnp3_cfg.master_id2);
+              
+    d->mutable_dnp3_cfg()->set_ip3(el->dnp3_cfg.ip3);       
+    d->mutable_dnp3_cfg()->set_port3(el->dnp3_cfg.port3);
+    d->mutable_dnp3_cfg()->set_master_id3(el->dnp3_cfg.master_id3);
       
-    }
-
     d->mutable_dnp3_cfg()->set_uns_conn_token(el->dnp3_cfg.uns_conn_token);
     d->mutable_dnp3_cfg()->set_uns_addr(el->dnp3_cfg.uns_addr); 
     d->mutable_dnp3_cfg()->set_analog_out_point_offset(el->dnp3_cfg.analog_out_point_offset);
