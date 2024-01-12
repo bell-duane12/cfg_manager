@@ -668,11 +668,11 @@ class ModbusParms :
 
   enum : int {
     kIpFieldNumber = 2,
+    kBaudRateFieldNumber = 4,
     kDeviceFieldNumber = 7,
     kAddressListFieldNumber = 8,
     kTriggerPathFieldNumber = 15,
     kPortFieldNumber = 3,
-    kBaudRateFieldNumber = 4,
     kNumDevsFieldNumber = 5,
     kAddrFieldNumber = 6,
     kTimeoutFieldNumber = 9,
@@ -701,6 +701,26 @@ class ModbusParms :
   const std::string& _internal_ip() const;
   void _internal_set_ip(const std::string& value);
   std::string* _internal_mutable_ip();
+  public:
+
+  // required string baud_rate = 4;
+  bool has_baud_rate() const;
+  private:
+  bool _internal_has_baud_rate() const;
+  public:
+  void clear_baud_rate();
+  const std::string& baud_rate() const;
+  void set_baud_rate(const std::string& value);
+  void set_baud_rate(std::string&& value);
+  void set_baud_rate(const char* value);
+  void set_baud_rate(const char* value, size_t size);
+  std::string* mutable_baud_rate();
+  std::string* release_baud_rate();
+  void set_allocated_baud_rate(std::string* baud_rate);
+  private:
+  const std::string& _internal_baud_rate() const;
+  void _internal_set_baud_rate(const std::string& value);
+  std::string* _internal_mutable_baud_rate();
   public:
 
   // required string device = 7;
@@ -774,19 +794,6 @@ class ModbusParms :
   private:
   ::PROTOBUF_NAMESPACE_ID::uint32 _internal_port() const;
   void _internal_set_port(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // required uint32 baud_rate = 4;
-  bool has_baud_rate() const;
-  private:
-  bool _internal_has_baud_rate() const;
-  public:
-  void clear_baud_rate();
-  ::PROTOBUF_NAMESPACE_ID::uint32 baud_rate() const;
-  void set_baud_rate(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_baud_rate() const;
-  void _internal_set_baud_rate(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // required uint32 num_devs = 5;
@@ -917,11 +924,11 @@ class ModbusParms :
   ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ip_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr baud_rate_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr device_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr address_list_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr trigger_path_;
   ::PROTOBUF_NAMESPACE_ID::uint32 port_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 baud_rate_;
   ::PROTOBUF_NAMESPACE_ID::uint32 num_devs_;
   ::PROTOBUF_NAMESPACE_ID::uint32 addr_;
   ::PROTOBUF_NAMESPACE_ID::uint32 timeout_;
@@ -2545,7 +2552,7 @@ inline void ModbusParms::set_allocated_ip(std::string* ip) {
 
 // required uint32 port = 3;
 inline bool ModbusParms::_internal_has_port() const {
-  bool value = (_has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline bool ModbusParms::has_port() const {
@@ -2553,7 +2560,7 @@ inline bool ModbusParms::has_port() const {
 }
 inline void ModbusParms::clear_port() {
   port_ = 0u;
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ModbusParms::_internal_port() const {
   return port_;
@@ -2563,7 +2570,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ModbusParms::port() const {
   return _internal_port();
 }
 inline void ModbusParms::_internal_set_port(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000020u;
   port_ = value;
 }
 inline void ModbusParms::set_port(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2571,32 +2578,75 @@ inline void ModbusParms::set_port(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:ModbusParms.port)
 }
 
-// required uint32 baud_rate = 4;
+// required string baud_rate = 4;
 inline bool ModbusParms::_internal_has_baud_rate() const {
-  bool value = (_has_bits_[0] & 0x00000020u) != 0;
+  bool value = (_has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
 inline bool ModbusParms::has_baud_rate() const {
   return _internal_has_baud_rate();
 }
 inline void ModbusParms::clear_baud_rate() {
-  baud_rate_ = 0u;
-  _has_bits_[0] &= ~0x00000020u;
+  baud_rate_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _has_bits_[0] &= ~0x00000002u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 ModbusParms::_internal_baud_rate() const {
-  return baud_rate_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 ModbusParms::baud_rate() const {
+inline const std::string& ModbusParms::baud_rate() const {
   // @@protoc_insertion_point(field_get:ModbusParms.baud_rate)
   return _internal_baud_rate();
 }
-inline void ModbusParms::_internal_set_baud_rate(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000020u;
-  baud_rate_ = value;
-}
-inline void ModbusParms::set_baud_rate(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void ModbusParms::set_baud_rate(const std::string& value) {
   _internal_set_baud_rate(value);
   // @@protoc_insertion_point(field_set:ModbusParms.baud_rate)
+}
+inline std::string* ModbusParms::mutable_baud_rate() {
+  // @@protoc_insertion_point(field_mutable:ModbusParms.baud_rate)
+  return _internal_mutable_baud_rate();
+}
+inline const std::string& ModbusParms::_internal_baud_rate() const {
+  return baud_rate_.GetNoArena();
+}
+inline void ModbusParms::_internal_set_baud_rate(const std::string& value) {
+  _has_bits_[0] |= 0x00000002u;
+  baud_rate_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void ModbusParms::set_baud_rate(std::string&& value) {
+  _has_bits_[0] |= 0x00000002u;
+  baud_rate_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:ModbusParms.baud_rate)
+}
+inline void ModbusParms::set_baud_rate(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _has_bits_[0] |= 0x00000002u;
+  baud_rate_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:ModbusParms.baud_rate)
+}
+inline void ModbusParms::set_baud_rate(const char* value, size_t size) {
+  _has_bits_[0] |= 0x00000002u;
+  baud_rate_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:ModbusParms.baud_rate)
+}
+inline std::string* ModbusParms::_internal_mutable_baud_rate() {
+  _has_bits_[0] |= 0x00000002u;
+  return baud_rate_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* ModbusParms::release_baud_rate() {
+  // @@protoc_insertion_point(field_release:ModbusParms.baud_rate)
+  if (!_internal_has_baud_rate()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000002u;
+  return baud_rate_.ReleaseNonDefaultNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void ModbusParms::set_allocated_baud_rate(std::string* baud_rate) {
+  if (baud_rate != nullptr) {
+    _has_bits_[0] |= 0x00000002u;
+  } else {
+    _has_bits_[0] &= ~0x00000002u;
+  }
+  baud_rate_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), baud_rate);
+  // @@protoc_insertion_point(field_set_allocated:ModbusParms.baud_rate)
 }
 
 // required uint32 num_devs = 5;
@@ -2657,7 +2707,7 @@ inline void ModbusParms::set_addr(::PROTOBUF_NAMESPACE_ID::uint32 value) {
 
 // required string device = 7;
 inline bool ModbusParms::_internal_has_device() const {
-  bool value = (_has_bits_[0] & 0x00000002u) != 0;
+  bool value = (_has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool ModbusParms::has_device() const {
@@ -2665,7 +2715,7 @@ inline bool ModbusParms::has_device() const {
 }
 inline void ModbusParms::clear_device() {
   device_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline const std::string& ModbusParms::device() const {
   // @@protoc_insertion_point(field_get:ModbusParms.device)
@@ -2683,29 +2733,29 @@ inline const std::string& ModbusParms::_internal_device() const {
   return device_.GetNoArena();
 }
 inline void ModbusParms::_internal_set_device(const std::string& value) {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000004u;
   device_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
 inline void ModbusParms::set_device(std::string&& value) {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000004u;
   device_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:ModbusParms.device)
 }
 inline void ModbusParms::set_device(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000004u;
   device_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:ModbusParms.device)
 }
 inline void ModbusParms::set_device(const char* value, size_t size) {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000004u;
   device_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:ModbusParms.device)
 }
 inline std::string* ModbusParms::_internal_mutable_device() {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000004u;
   return device_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* ModbusParms::release_device() {
@@ -2713,14 +2763,14 @@ inline std::string* ModbusParms::release_device() {
   if (!_internal_has_device()) {
     return nullptr;
   }
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000004u;
   return device_.ReleaseNonDefaultNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline void ModbusParms::set_allocated_device(std::string* device) {
   if (device != nullptr) {
-    _has_bits_[0] |= 0x00000002u;
+    _has_bits_[0] |= 0x00000004u;
   } else {
-    _has_bits_[0] &= ~0x00000002u;
+    _has_bits_[0] &= ~0x00000004u;
   }
   device_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), device);
   // @@protoc_insertion_point(field_set_allocated:ModbusParms.device)
@@ -2728,7 +2778,7 @@ inline void ModbusParms::set_allocated_device(std::string* device) {
 
 // required string address_list = 8;
 inline bool ModbusParms::_internal_has_address_list() const {
-  bool value = (_has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline bool ModbusParms::has_address_list() const {
@@ -2736,7 +2786,7 @@ inline bool ModbusParms::has_address_list() const {
 }
 inline void ModbusParms::clear_address_list() {
   address_list_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline const std::string& ModbusParms::address_list() const {
   // @@protoc_insertion_point(field_get:ModbusParms.address_list)
@@ -2754,29 +2804,29 @@ inline const std::string& ModbusParms::_internal_address_list() const {
   return address_list_.GetNoArena();
 }
 inline void ModbusParms::_internal_set_address_list(const std::string& value) {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
   address_list_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
 inline void ModbusParms::set_address_list(std::string&& value) {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
   address_list_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:ModbusParms.address_list)
 }
 inline void ModbusParms::set_address_list(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
   address_list_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:ModbusParms.address_list)
 }
 inline void ModbusParms::set_address_list(const char* value, size_t size) {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
   address_list_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:ModbusParms.address_list)
 }
 inline std::string* ModbusParms::_internal_mutable_address_list() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
   return address_list_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* ModbusParms::release_address_list() {
@@ -2784,14 +2834,14 @@ inline std::string* ModbusParms::release_address_list() {
   if (!_internal_has_address_list()) {
     return nullptr;
   }
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
   return address_list_.ReleaseNonDefaultNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline void ModbusParms::set_allocated_address_list(std::string* address_list) {
   if (address_list != nullptr) {
-    _has_bits_[0] |= 0x00000004u;
+    _has_bits_[0] |= 0x00000008u;
   } else {
-    _has_bits_[0] &= ~0x00000004u;
+    _has_bits_[0] &= ~0x00000008u;
   }
   address_list_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), address_list);
   // @@protoc_insertion_point(field_set_allocated:ModbusParms.address_list)
@@ -2967,7 +3017,7 @@ inline void ModbusParms::set_poll_trigger(::PROTOBUF_NAMESPACE_ID::uint32 value)
 
 // required string trigger_path = 15;
 inline bool ModbusParms::_internal_has_trigger_path() const {
-  bool value = (_has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline bool ModbusParms::has_trigger_path() const {
@@ -2975,7 +3025,7 @@ inline bool ModbusParms::has_trigger_path() const {
 }
 inline void ModbusParms::clear_trigger_path() {
   trigger_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline const std::string& ModbusParms::trigger_path() const {
   // @@protoc_insertion_point(field_get:ModbusParms.trigger_path)
@@ -2993,29 +3043,29 @@ inline const std::string& ModbusParms::_internal_trigger_path() const {
   return trigger_path_.GetNoArena();
 }
 inline void ModbusParms::_internal_set_trigger_path(const std::string& value) {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000010u;
   trigger_path_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
 inline void ModbusParms::set_trigger_path(std::string&& value) {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000010u;
   trigger_path_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:ModbusParms.trigger_path)
 }
 inline void ModbusParms::set_trigger_path(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000010u;
   trigger_path_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:ModbusParms.trigger_path)
 }
 inline void ModbusParms::set_trigger_path(const char* value, size_t size) {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000010u;
   trigger_path_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:ModbusParms.trigger_path)
 }
 inline std::string* ModbusParms::_internal_mutable_trigger_path() {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000010u;
   return trigger_path_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* ModbusParms::release_trigger_path() {
@@ -3023,14 +3073,14 @@ inline std::string* ModbusParms::release_trigger_path() {
   if (!_internal_has_trigger_path()) {
     return nullptr;
   }
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000010u;
   return trigger_path_.ReleaseNonDefaultNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline void ModbusParms::set_allocated_trigger_path(std::string* trigger_path) {
   if (trigger_path != nullptr) {
-    _has_bits_[0] |= 0x00000008u;
+    _has_bits_[0] |= 0x00000010u;
   } else {
-    _has_bits_[0] &= ~0x00000008u;
+    _has_bits_[0] &= ~0x00000010u;
   }
   trigger_path_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), trigger_path);
   // @@protoc_insertion_point(field_set_allocated:ModbusParms.trigger_path)

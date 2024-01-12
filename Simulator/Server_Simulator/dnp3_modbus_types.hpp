@@ -7,6 +7,7 @@
 
 #include <string>
 #include <vector>
+#include <sstream>
 
 #define MAX_MODBUS_DEVICES      250
 
@@ -49,6 +50,37 @@ typedef enum {
   _NONE
 } TDnp3DataType;
 
+inline std::ostream& operator<<(std::ostream& out, const TDnp3DataType& value) {
+      
+  switch(value) {
+  
+    case BIN_INPUT:
+      out << "BINARY INPUT";
+      break;     
+    case BIN_OUTPUT:
+      out << "BINARY OUTPUT";
+      break;
+    case BIN_COUNTER:
+      out << "BINARY COUNTER";
+      break;
+    case FRZ_COUNTER:
+      out << "FROZEN COUNTER";
+      break;
+    case ANA_INPUT:
+      out << "ANALOG INPUT";
+      break;
+    case ANA_OUTPUT:
+      out << "ANALOG OUTPUT";
+      break;
+    case _NONE:
+      out << "NONE";
+      break;      
+  }
+    
+  return out;
+  
+}
+
 typedef struct {
   unsigned int point;
 //  TDnp3ObjectTypes type;
@@ -62,6 +94,26 @@ typedef enum {
   mRTU = 2,
   mRTU_TCP = 3,
 } TModbusType;
+
+inline std::ostream& operator<<(std::ostream& out, const TModbusType& value) {
+      
+  switch(value) {
+  
+    case mTCP:
+      out << "TCP";
+      break;     
+    case mRTU:
+      out << "RTU";
+      break;
+    case mRTU_TCP:
+      out << "RTU_TCP";
+      break;
+      
+  }
+    
+  return out;
+  
+}
 
 typedef struct {
   unsigned int address;

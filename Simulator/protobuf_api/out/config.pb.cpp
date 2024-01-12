@@ -198,19 +198,19 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_config_2eproto::offsets[] PROT
   PROTOBUF_FIELD_OFFSET(::ModbusParms, trigger_path_),
   14,
   0,
-  4,
   5,
+  1,
   6,
   7,
-  1,
   2,
+  3,
   8,
   9,
   10,
   11,
   12,
   13,
-  3,
+  4,
   PROTOBUF_FIELD_OFFSET(::EquipClass, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::EquipClass, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -302,7 +302,7 @@ const char descriptor_table_protodef_config_2eproto[] PROTOBUF_SECTION_VARIABLE(
   "t_type\030\022 \002(\0162\021.TDnp3ObjectType_\"\264\002\n\013Modb"
   "usParms\022\037\n\004mode\030\001 \002(\0162\021.TModbusTypeConn_"
   "\022\n\n\002ip\030\002 \002(\t\022\014\n\004port\030\003 \002(\r\022\021\n\tbaud_rate\030"
-  "\004 \002(\r\022\020\n\010num_devs\030\005 \002(\r\022\014\n\004addr\030\006 \002(\r\022\016\n"
+  "\004 \002(\t\022\020\n\010num_devs\030\005 \002(\r\022\014\n\004addr\030\006 \002(\r\022\016\n"
   "\006device\030\007 \002(\t\022\024\n\014address_list\030\010 \002(\t\022\017\n\007t"
   "imeout\030\t \002(\r\022\025\n\rinter_polling\030\n \002(\r\022\025\n\ri"
   "ntra_polling\030\013 \002(\r\022\025\n\rretry_timeout\030\014 \002("
@@ -1253,10 +1253,10 @@ class ModbusParms::_Internal {
     (*has_bits)[0] |= 1u;
   }
   static void set_has_port(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
+    (*has_bits)[0] |= 32u;
   }
   static void set_has_baud_rate(HasBits* has_bits) {
-    (*has_bits)[0] |= 32u;
+    (*has_bits)[0] |= 2u;
   }
   static void set_has_num_devs(HasBits* has_bits) {
     (*has_bits)[0] |= 64u;
@@ -1265,10 +1265,10 @@ class ModbusParms::_Internal {
     (*has_bits)[0] |= 128u;
   }
   static void set_has_device(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
+    (*has_bits)[0] |= 4u;
   }
   static void set_has_address_list(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
+    (*has_bits)[0] |= 8u;
   }
   static void set_has_timeout(HasBits* has_bits) {
     (*has_bits)[0] |= 256u;
@@ -1289,7 +1289,7 @@ class ModbusParms::_Internal {
     (*has_bits)[0] |= 8192u;
   }
   static void set_has_trigger_path(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
+    (*has_bits)[0] |= 16u;
   }
 };
 
@@ -1306,6 +1306,10 @@ ModbusParms::ModbusParms(const ModbusParms& from)
   ip_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (from._internal_has_ip()) {
     ip_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ip_);
+  }
+  baud_rate_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from._internal_has_baud_rate()) {
+    baud_rate_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.baud_rate_);
   }
   device_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (from._internal_has_device()) {
@@ -1328,6 +1332,7 @@ ModbusParms::ModbusParms(const ModbusParms& from)
 void ModbusParms::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ModbusParms_config_2eproto.base);
   ip_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  baud_rate_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   device_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   address_list_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   trigger_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1344,6 +1349,7 @@ ModbusParms::~ModbusParms() {
 
 void ModbusParms::SharedDtor() {
   ip_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  baud_rate_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   device_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   address_list_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   trigger_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1365,21 +1371,24 @@ void ModbusParms::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
+  if (cached_has_bits & 0x0000001fu) {
     if (cached_has_bits & 0x00000001u) {
       ip_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000002u) {
-      device_.ClearNonDefaultToEmptyNoArena();
+      baud_rate_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000004u) {
-      address_list_.ClearNonDefaultToEmptyNoArena();
+      device_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000008u) {
+      address_list_.ClearNonDefaultToEmptyNoArena();
+    }
+    if (cached_has_bits & 0x00000010u) {
       trigger_path_.ClearNonDefaultToEmptyNoArena();
     }
   }
-  if (cached_has_bits & 0x000000f0u) {
+  if (cached_has_bits & 0x000000e0u) {
     ::memset(&port_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&addr_) -
         reinterpret_cast<char*>(&port_)) + sizeof(addr_));
@@ -1433,11 +1442,14 @@ const char* ModbusParms::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // required uint32 baud_rate = 4;
+      // required string baud_rate = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          _Internal::set_has_baud_rate(&has_bits);
-          baud_rate_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_baud_rate();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          #ifndef NDEBUG
+          ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ModbusParms.baud_rate");
+          #endif  // !NDEBUG
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1584,15 +1596,19 @@ failure:
   }
 
   // required uint32 port = 3;
-  if (cached_has_bits & 0x00000010u) {
+  if (cached_has_bits & 0x00000020u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_port(), target);
   }
 
-  // required uint32 baud_rate = 4;
-  if (cached_has_bits & 0x00000020u) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_baud_rate(), target);
+  // required string baud_rate = 4;
+  if (cached_has_bits & 0x00000002u) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->_internal_baud_rate().data(), static_cast<int>(this->_internal_baud_rate().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+      "ModbusParms.baud_rate");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_baud_rate(), target);
   }
 
   // required uint32 num_devs = 5;
@@ -1608,7 +1624,7 @@ failure:
   }
 
   // required string device = 7;
-  if (cached_has_bits & 0x00000002u) {
+  if (cached_has_bits & 0x00000004u) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
       this->_internal_device().data(), static_cast<int>(this->_internal_device().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
@@ -1618,7 +1634,7 @@ failure:
   }
 
   // required string address_list = 8;
-  if (cached_has_bits & 0x00000004u) {
+  if (cached_has_bits & 0x00000008u) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
       this->_internal_address_list().data(), static_cast<int>(this->_internal_address_list().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
@@ -1664,7 +1680,7 @@ failure:
   }
 
   // required string trigger_path = 15;
-  if (cached_has_bits & 0x00000008u) {
+  if (cached_has_bits & 0x00000010u) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
       this->_internal_trigger_path().data(), static_cast<int>(this->_internal_trigger_path().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
@@ -1690,6 +1706,13 @@ size_t ModbusParms::RequiredFieldsByteSizeFallback() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_ip());
+  }
+
+  if (_internal_has_baud_rate()) {
+    // required string baud_rate = 4;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_baud_rate());
   }
 
   if (_internal_has_device()) {
@@ -1718,13 +1741,6 @@ size_t ModbusParms::RequiredFieldsByteSizeFallback() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_port());
-  }
-
-  if (_internal_has_baud_rate()) {
-    // required uint32 baud_rate = 4;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_baud_rate());
   }
 
   if (_internal_has_num_devs()) {
@@ -1801,6 +1817,11 @@ size_t ModbusParms::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_ip());
 
+    // required string baud_rate = 4;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_baud_rate());
+
     // required string device = 7;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -1820,11 +1841,6 @@ size_t ModbusParms::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_port());
-
-    // required uint32 baud_rate = 4;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_baud_rate());
 
     // required uint32 num_devs = 5;
     total_size += 1 +
@@ -1916,21 +1932,22 @@ void ModbusParms::MergeFrom(const ModbusParms& from) {
     }
     if (cached_has_bits & 0x00000002u) {
       _has_bits_[0] |= 0x00000002u;
-      device_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.device_);
+      baud_rate_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.baud_rate_);
     }
     if (cached_has_bits & 0x00000004u) {
       _has_bits_[0] |= 0x00000004u;
-      address_list_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.address_list_);
+      device_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.device_);
     }
     if (cached_has_bits & 0x00000008u) {
       _has_bits_[0] |= 0x00000008u;
-      trigger_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.trigger_path_);
+      address_list_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.address_list_);
     }
     if (cached_has_bits & 0x00000010u) {
-      port_ = from.port_;
+      _has_bits_[0] |= 0x00000010u;
+      trigger_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.trigger_path_);
     }
     if (cached_has_bits & 0x00000020u) {
-      baud_rate_ = from.baud_rate_;
+      port_ = from.port_;
     }
     if (cached_has_bits & 0x00000040u) {
       num_devs_ = from.num_devs_;
@@ -1991,6 +2008,8 @@ void ModbusParms::InternalSwap(ModbusParms* other) {
   swap(_has_bits_[0], other->_has_bits_[0]);
   ip_.Swap(&other->ip_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  baud_rate_.Swap(&other->baud_rate_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   device_.Swap(&other->device_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   address_list_.Swap(&other->address_list_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
@@ -1998,7 +2017,6 @@ void ModbusParms::InternalSwap(ModbusParms* other) {
   trigger_path_.Swap(&other->trigger_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(port_, other->port_);
-  swap(baud_rate_, other->baud_rate_);
   swap(num_devs_, other->num_devs_);
   swap(addr_, other->addr_);
   swap(timeout_, other->timeout_);

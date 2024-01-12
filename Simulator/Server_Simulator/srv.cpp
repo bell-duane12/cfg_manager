@@ -3,8 +3,13 @@
 #include <utility>
 #include <iomanip>
 #include <stdio.h>
+#include <atomic>
 
 #include "srv.h"
+
+
+extern std::atomic<bool> running;
+
 
 /*********************************
     CLASS CONSTRUCTION
@@ -27,10 +32,10 @@ MqttServerWrapper::MqttServerWrapper(const char* _host, const int& _port,
   // Library Initialization
   mosqpp::lib_init();
 
-  // Register user and password
+  // Broker user and password
   username_pw_set(user, passw);
 
-  // Non-blocking connection to broker request
+  // Request non-blocking connection with broker reques
   connect_async(host, port, 60);
 
   // Start thread managing connection / publishes / subscribes
@@ -109,7 +114,7 @@ bool MqttServerWrapper::dispachUpload(UploadToGateway& upload) {
     
   // Publish message
   int ret = publish(NULL, topic.str().c_str(), size, msg, 1, false);
-
+  
   // Free created buffer
   delete[](char*) msg;
 
@@ -162,9 +167,11 @@ void MqttServerWrapper::on_connect(int rc) {
 void MqttServerWrapper::on_publish(int mid) {
 
 #ifdef ENABLE_DEBUG_CONSOLE
-  std::cout << ">> MqttServerWrapper - Message (" << mid-2 << ") succeed to be published " << std::endl;
+  //std::cout << ">> MqttServerWrapper - Message (" << mid << ") successfully published!" << std::endl;
 #endif
 
+  running.store(false, std::memory_order_relaxed);
+  
 }
 
 /*
@@ -316,7 +323,7 @@ bool MqttServerWrapper::configEts(uint64_t reqId, std::vector<TEtsListConfig>& e
        
     auto d = c->add_devices();
        
-    // equipment data
+    // equipment config
     d->set_name(el->name);
     d->set_manufacturer(el->manufacturer);
     d->set_model(el->model);
@@ -346,7 +353,7 @@ bool MqttServerWrapper::configEts(uint64_t reqId, std::vector<TEtsListConfig>& e
     // modbus config       
     d->mutable_modbus_cfg()->set_mode( (TModbusTypeConn_) el->modbus_cfg.mode );
     d->mutable_modbus_cfg()->set_port(el->modbus_cfg.port);
-    d->mutable_modbus_cfg()->set_baud_rate(9600); //(el->modbus_cfg.baud_rate); //TODO:
+    d->mutable_modbus_cfg()->set_baud_rate(el->modbus_cfg.baud_rate); 
     d->mutable_modbus_cfg()->set_num_devs(el->modbus_cfg.num_devs);
     d->mutable_modbus_cfg()->set_addr(el->modbus_cfg.addr);
     d->mutable_modbus_cfg()->set_timeout(el->modbus_cfg.timeout);

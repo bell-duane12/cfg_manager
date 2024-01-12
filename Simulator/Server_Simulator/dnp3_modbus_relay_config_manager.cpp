@@ -24,7 +24,7 @@ Dnp3_Modbus_Relay_Config_Manager::Dnp3_Modbus_Relay_Config_Manager(const std::st
   cout << "Modbus configuration loaded..." << endl;
   if(!load_modbus_poller_cfg_from_file())
     throw std::runtime_error("Unable to load Modbus poller configuration from config file");
-  cout << "Poller configuration loaded..." << endl;
+  cout << "Modbus Poller configuration loaded..." << endl;
   if(!load_dnp3_cfg_from_file())
     throw std::runtime_error("Unable to load DNP3 configuration from config file");
   cout << "Dnp3 configuration loaded..." << endl;
@@ -57,7 +57,7 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_cfg_from_file() {
   size_t pos = 0;
   bool done = false;
   
-  //Se o modo é TCP, carrega IP e porta para conexão
+  // Se o modo é TCP, carrega IP e porta para conexão
   std::string type = cfg_reader.Get("modbus", "mode", "invalid");
   if (type.compare("TCP") == 0) {
     modbus_config.type = mTCP;
@@ -75,7 +75,9 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_cfg_from_file() {
       return false;
     modbus_config.baud = cfg_reader.Get("modbus", "baud", "error");
     if (modbus_config.baud.compare("error") == 0)
-      return false;
+      return false;    
+    modbus_config.ip = cfg_reader.Get("modbus", "ip", "error");
+    modbus_config.port = cfg_reader.Get("modbus", "port", "error");
   }
   else if (type.compare("RTU_TCP") == 0) {
     modbus_config.type = mRTU_TCP;
@@ -89,12 +91,12 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_cfg_from_file() {
   else
     return false;
   
-  //Carrega o endereço slave modbus (não obrigatório quando o modo é TCP)
+  // Carrega o endereço slave modbus (não obrigatório quando o modo é TCP)
   modbus_config.address = cfg_reader.GetInteger("modbus", "address", -1);
   if (modbus_config.address < 1)
     return false;
 
-  //Carrega o numero de dispositivos no barramento
+  // Carrega o numero de dispositivos no barramento
   modbus_config.numDevs = cfg_reader.GetInteger("modbus", "numDevs", -1);
   if ((modbus_config.numDevs < 1) || (modbus_config.numDevs > MAX_MODBUS_DEVICES))
     return false;
@@ -107,7 +109,7 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_cfg_from_file() {
   if ((modbus_config.timeout == 0) || (modbus_config.timeout > 10))
     modbus_config.timeout = 0.750;
 
-  //TODO: checar
+
   etsConfigList.modbus_cfg.mode = (TModbusTypeConn) modbus_config.type; 
   etsConfigList.modbus_cfg.addr = modbus_config.address;
   etsConfigList.modbus_cfg.ip = modbus_config.ip;
@@ -115,28 +117,39 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_cfg_from_file() {
     etsConfigList.modbus_cfg.port = std::stoi(modbus_config.port);
   }
   etsConfigList.modbus_cfg.device = modbus_config.device;
-  etsConfigList.modbus_cfg.baud_rate = modbus_config.baud;    //TODO: check db type
+  etsConfigList.modbus_cfg.baud_rate = modbus_config.baud;    
   etsConfigList.modbus_cfg.num_devs = modbus_config.numDevs;
   etsConfigList.modbus_cfg.address_list = _addList;
   etsConfigList.modbus_cfg.timeout = modbus_config.timeout;
-    
+
+  // Debug
+  std::cout << " Modbus type = "        << modbus_config.type    << std::endl;
+  std::cout << " Modbus ip = "          << modbus_config.ip      << std::endl;
+  std::cout << " Modbus port = "        << modbus_config.port    << std::endl;
+  std::cout << " Modbus device = "      << modbus_config.device  << std::endl;
+  std::cout << " Modbus baud rate = "   << modbus_config.baud    << std::endl;
+  std::cout << " Modbus address = "     << modbus_config.address << std::endl;
+  std::cout << " Modbus numDevs = "     << modbus_config.numDevs << std::endl;
+  std::cout << " Modbus addressList = " << _addList              << std::endl;  
+  std::cout << " Modbus timeout = "     << modbus_config.timeout << std::endl;
+      
   return true;
   
 }
 
 bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_poller_cfg_from_file() {
 
-  modbus_poller_config.inter_polling = cfg_reader.GetInteger("modbus_poller", "InterPolling", -1);
-  if (modbus_poller_config.inter_polling < 0)
+  modbus_poller_config.inter_polling = cfg_reader.GetInteger("modbus_poller", "InterPolling", UINT32_MAX);
+  if (modbus_poller_config.inter_polling == UINT32_MAX)
     return false;
-  modbus_poller_config.intra_polling = cfg_reader.GetInteger("modbus_poller", "IntraPolling", -1);
-  if (modbus_poller_config.intra_polling < 0)
+  modbus_poller_config.intra_polling = cfg_reader.GetInteger("modbus_poller", "IntraPolling", UINT32_MAX);
+  if (modbus_poller_config.intra_polling == UINT32_MAX)
     return false;
-  modbus_poller_config.retry_timeout = cfg_reader.GetInteger("modbus_poller", "RetryTimeout", -1);
-  if (modbus_poller_config.retry_timeout < 0)
+  modbus_poller_config.retry_timeout = cfg_reader.GetInteger("modbus_poller", "RetryTimeout", UINT32_MAX);
+  if (modbus_poller_config.retry_timeout == UINT32_MAX)
     return false;
-  modbus_poller_config.retries = cfg_reader.GetInteger("modbus_poller", "Retries", -1);
-  if (modbus_poller_config.retries < 0)
+  modbus_poller_config.retries = cfg_reader.GetInteger("modbus_poller", "Retries", UINT32_MAX);
+  if (modbus_poller_config.retries == UINT32_MAX)
     return false;
   modbus_poller_config.poll_Semaphore = cfg_reader.GetBoolean("modbus_poller", "PollTrigger", false);
   modbus_poller_config.semaphore_FileName = cfg_reader.Get("modbus_poller", "TriggerFileName", "error");
@@ -150,50 +163,31 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_poller_cfg_from_file() {
   etsConfigList.modbus_cfg.retries = modbus_poller_config.retries;
   etsConfigList.modbus_cfg.poll_trigger = modbus_poller_config.poll_Semaphore;
   etsConfigList.modbus_cfg.trigger_path = modbus_poller_config.semaphore_FileName;
-  
+
+
+  // Debug
+  std::cout << " Modbus inter polling = "   << modbus_poller_config.inter_polling                    << std::endl;
+  std::cout << " Modbus intra polling = "   << modbus_poller_config.intra_polling                    << std::endl;
+  std::cout << " Modbus retry timeout = "   << modbus_poller_config.retry_timeout                    << std::endl;
+  std::cout << " Modbus retries = "         << modbus_poller_config.retries                          << std::endl;
+  std::cout << " Modbus poll semaphore = "  << std::boolalpha << modbus_poller_config.poll_Semaphore << std::endl;
+  std::cout << " Modbus semaphore file = "  << modbus_poller_config.semaphore_FileName               << std::endl;
+    
   return true;
   
 }
 
 bool Dnp3_Modbus_Relay_Config_Manager::load_dnp3_cfg_from_file() {
 
-  //OBS: GetFields retorna os campos de uma seção em ordem alfabética
+  // OBS: GetFields retorna os campos de uma seção em ordem alfabética
   auto dnp3_fields = cfg_reader.GetFields("dnp3");
-/*
-  //Carrega parte comum da configuração (igual para todas as instâncias DNP3)
-  dnp3_device_config.DllTimeout = cfg_reader.GetInteger("dnp3", "DllTimeout", 3000);
-  dnp3_device_config.AppTimeout = cfg_reader.GetInteger("dnp3", "AppTimeout", 10000);
-  dnp3_device_config.SelectOperateTimeout = (Dnp3Uchar) cfg_reader.GetInteger("dnp3", "SelectOperateTimeout", 10);
-  dnp3_device_config.Dnp3ClockAdjust = cfg_reader.GetInteger("dnp3", "Dnp3ClockAdjust", 1440);
-  dnp3_device_config.Dnp3InterFrame = cfg_reader.GetInteger("dnp3", "Dnp3InterFrame", 0);
-  dnp3_device_config.Dnp3EventBufsize = cfg_reader.GetInteger("dnp3", "Dnp3EventBufsize", 0);
-  dnp3_device_config.UnsCtrl = (TUnsCtrl) cfg_reader.GetInteger("dnp3", "UnsCtrl", 0);
-  dnp3_device_config.Class1MinimalEventsNumber = cfg_reader.GetInteger("dnp3", "Class1MinimalEventsNumber", 1);
-  dnp3_device_config.Class2MinimalEventsNumber = cfg_reader.GetInteger("dnp3", "Class2MinimalEventsNumber", 10);
-  dnp3_device_config.Class3MinimalEventsNumber = cfg_reader.GetInteger("dnp3", "Class3MinimalEventsNumber", 10);
-  dnp3_device_config.UnsAppRetry = cfg_reader.GetInteger("dnp3", "UnsAppRetry", 20);
-  dnp3_device_config.UnsAppTimeout = cfg_reader.GetInteger("dnp3", "UnsAppTimeout", 5000);
-  dnp3_device_config.WDDnp3.Dnp3TX = cfg_reader.GetInteger("dnp3", "WDDnp3.Dnp3TX", 0);
-  dnp3_device_config.WDDnp3.Dnp3RX = cfg_reader.GetInteger("dnp3", "WDDnp3.Dnp3RX", 0);
-  dnp3_device_config.WDDnp3.PolTX = cfg_reader.GetInteger("dnp3", "WDDnp3.PolTX", 0);
-  dnp3_device_config.WDDnp3.PolRX = cfg_reader.GetInteger("dnp3", "WDDnp3.PolRX", 0);
-  dnp3_device_config.WDDnp3.Dnp3_Disparado_timer  = cfg_reader.GetInteger("dnp3", "WDDnp3.Dnp3_Disparado_timer ", 0);
-  dnp3_device_config.WDDnp3.Dnp3_Disparado_count = cfg_reader.GetInteger("dnp3", "WDDnp3.Dnp3_Disparado_count", 0);
-*/  
-//  dnp3_device_config.DigitalInputClass = cfg_reader.GetInteger("dnp3", "DigitalInputClass", 0);
-//  dnp3_device_config.DigitalCounterClass = cfg_reader.GetInteger("dnp3", "DigitalCounterClass", 0);
+ 
   dnp3_device_config.Dnp3AnalogOutputPointOffsset = cfg_reader.GetInteger("dnp3","AnalogOutputPointOffset",0);
   dnp3_device_config.Dnp3BinaryInputConfirmCommand = cfg_reader.GetInteger("dnp3","BinaryInputConfirmCommand",1);
   dnp3_device_config.Dnp3SlaveAddress = cfg_reader.GetInteger("dnp3", "slaveId", 0);
   dnp3_device_config.Dnp3UnsolicitedAddress = cfg_reader.GetInteger("dnp3", "Dnp3UnsolicitedAddress", 0);
   
-//  dnp3_device_config.Connection1.ip = cfg_reader.Get("dnp3", "IP1", "error");
-//  dnp3_device_config.Connection1.port = cfg_reader.GetInteger("dnp3", "port1", -1);
-//  dnp3_device_config.Connection2.ip = cfg_reader.Get("dnp3", "IP2", "error");
-//  dnp3_device_config.Connection2.port = cfg_reader.GetInteger("dnp3", "port2", -1);
-  
-
-  //conferindo se há o mesmo número de IPs, portas e masterIDs
+  // Conferindo se há o mesmo número de IPs, portas e masterIDs
   std::set<std::string> tokens_set; //< Tokens numéricos para contagem dos labels comuns 
   for (auto field : dnp3_fields) {
     //TDnp3MasterServer dnp3_master_server;
@@ -260,6 +254,7 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_dnp3_cfg_from_file() {
   if (dnp3_connections_map.empty())
     throw std::system_error();
       
+      
   etsConfigList.dnp3_cfg.master_id1 = dnp3_connections_map["1"].master_addr;
   etsConfigList.dnp3_cfg.ip1 = dnp3_connections_map["1"].ip;
   etsConfigList.dnp3_cfg.port1 = dnp3_connections_map["1"].port;
@@ -279,7 +274,25 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_dnp3_cfg_from_file() {
   etsConfigList.dnp3_cfg.uns_conn_token = std::stoi(unsolicited_conn_token); 
   etsConfigList.dnp3_cfg.uns_addr = dnp3_device_config.Dnp3UnsolicitedAddress;
   
-  
+
+  // Debug --------------------
+  std::cout << " DNP3 Analog Output Point Offset = "    << dnp3_device_config.Dnp3AnalogOutputPointOffsset  << std::endl;
+  std::cout << " DNP3 Binary Input Confirm Command = "  << dnp3_device_config.Dnp3BinaryInputConfirmCommand << std::endl;
+  std::cout << " DNP3 Slave Address = "                 << dnp3_device_config.Dnp3SlaveAddress              << std::endl;
+  std::cout << " DNP3 Unsolicited Address = "           << dnp3_device_config.Dnp3UnsolicitedAddress        << std::endl;
+  std::cout << " DNP3 Unsolicited Connection Token = "  << unsolicited_conn_token                           << std::endl;
+  for (const auto& dnp3_conn : dnp3_connections_map) {
+      
+    const auto& key = dnp3_conn.first;
+    const auto& conn = dnp3_conn.second;
+    
+    std::cout << " DNP3 Master ID #"   << key << ": " <<  conn.master_addr << std::endl;    
+    std::cout << " DNP3 Master IP #"   << key << ": " <<  conn.ip          << std::endl;
+    std::cout << " DNP3 Master Port #" << key << ": " <<  conn.port        << std::endl;
+    
+  }
+  // --------------------------
+      
   return true;
   
 }
@@ -301,12 +314,20 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_failure_cfg_from_file() {
   failure_config.data.point = cfg_reader.GetInteger("Failure","Dnp3FailurePoint",-1);
   failure_config.data.value = cfg_reader.GetInteger("Failure","Dnp3FailurePointValue",-1);
   
-  //TODO: check data types
+  
+
   etsConfigList.dnp3_cfg.check_failure = failure_config.Enabled;
-  etsConfigList.dnp3_cfg.dnp3_failure_point_type = (TDnp3ObjectType) failure_config.data.type; //TODO: check if enums match
+  etsConfigList.dnp3_cfg.dnp3_failure_point_type = (TDnp3ObjectType) failure_config.data.type; 
   etsConfigList.dnp3_cfg.failure_point = failure_config.data.point;    
   etsConfigList.dnp3_cfg.dnp3_failure_point_val = failure_config.data.value; 
   
+  
+  // Debug
+  std::cout << " CheckFailure = "          << std::boolalpha << failure_config.Enabled  << std::endl;
+  std::cout << " Dnp3FailurePointType = "  << failure_config.data.type                  << std::endl;
+  std::cout << " Dnp3FailurePoint = "      << failure_config.data.point                 << std::endl;
+  std::cout << " Dnp3FailurePointValue = " << failure_config.data.value                 << std::endl;
+    
   return true;
   
 }
@@ -344,7 +365,7 @@ TFailureConfig Dnp3_Modbus_Relay_Config_Manager::get_failure_config() {
 }
 
 TEtsListConfig Dnp3_Modbus_Relay_Config_Manager::get_config() {
-  return etsConfigList; //equipment_and_class_config;
+  return etsConfigList; 
 }
 
 bool Dnp3_Modbus_Relay_Config_Manager::load_broker_cfg_from_file() {
@@ -400,6 +421,7 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_classmap_cfg_from_file() {
   if (equipment_and_class_config.classmap.map_description.compare("error") == 0)
     return false;
 
+
   etsConfigList.classmap.version = equipment_and_class_config.classmap.version;
   etsConfigList.classmap.classId = equipment_and_class_config.classmap.classId;
   etsConfigList.classmap.typeId = equipment_and_class_config.classmap.typeId;
@@ -408,6 +430,15 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_classmap_cfg_from_file() {
   etsConfigList.classmap.map_path = equipment_and_class_config.classmap.map_path;
   etsConfigList.classmap.map_description = equipment_and_class_config.classmap.map_description;
   etsConfigList.class_id = etsConfigList.classmap.classId;
+  
+  // Debug 
+  std::cout << " Classmap version = "       << equipment_and_class_config.classmap.version         << std::endl;
+  std::cout << " Classmap class id = "      << equipment_and_class_config.classmap.classId         << std::endl;
+  std::cout << " Classmap type id = "       << equipment_and_class_config.classmap.typeId          << std::endl;
+  std::cout << " Classmap map id = "        << equipment_and_class_config.classmap.mapId           << std::endl;
+  std::cout << " Classmap name = "          << equipment_and_class_config.classmap.name            << std::endl;
+  std::cout << " Classmap map path = "      << equipment_and_class_config.classmap.map_path        << std::endl;
+  std::cout << " Classmap map description " << equipment_and_class_config.classmap.map_description << std::endl;
   
   return true;
   
@@ -428,10 +459,17 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_equipment_cfg_from_file() {
   if (equipment_and_class_config.ug == 0)
     return false;
 
+
   etsConfigList.name = equipment_and_class_config.name;
   etsConfigList.manufacturer = equipment_and_class_config.manufacturer;
   etsConfigList.model = equipment_and_class_config.model;
   etsConfigList.ug = equipment_and_class_config.ug;
+  
+  // Debug
+  std::cout << " Equipment name = "          << equipment_and_class_config.name         << std::endl;
+  std::cout << " Equipment manufacturer = "  << equipment_and_class_config.manufacturer << std::endl;
+  std::cout << " Equipment model = "         << equipment_and_class_config.model        << std::endl;
+  std::cout << " Equipment ug = "            << equipment_and_class_config.ug           << std::endl;
   
   return true;
   
