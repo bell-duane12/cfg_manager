@@ -109,6 +109,16 @@ typedef struct {
 */
 } TEtsListConfig;
 
+typedef struct {
+  std::string ip;
+  unsigned int port;      
+  std::string  user;  
+  std::string  password; 
+  unsigned int gateway_id;
+  unsigned int keepalive; 
+  unsigned int pubInterval;
+} TBrokerConfig;
+
 typedef struct
 {
 
