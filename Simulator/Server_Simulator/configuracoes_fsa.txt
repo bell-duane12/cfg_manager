@@ -1,0 +1,1175 @@
+header {
+  ticket: 11
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "Inverter UG1"
+    manufacturer: "Sungrow"
+    model: "125KW"
+    class_id: 1
+    ug: 1
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.101"
+      port: 502
+      baud_rate: 9600
+      num_devs: 8
+      addr: 1
+      device: "/dev/ttyUSB0"
+      address_list: "1, 4, 6, 5, 7, 8, 3, 2;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 1010
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 51
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 1
+      typeId: 1
+      mapId: 1
+      name: "inv_sung_125"
+      version: "0.0.2"
+      classmap_description: "Mapa Inversor Sungrow 125KW"
+      classmap_path: "inverterFSA.cfg"
+    }
+  }
+  devices {
+    name: "Inverter UG2"
+    manufacturer: "Sungrow"
+    model: "125KW"
+    class_id: 1
+    ug: 2
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.111"
+      port: 502
+      baud_rate: 9600
+      num_devs: 8
+      addr: 1
+      device: "/dev/ttyUSB0"
+      address_list: "1, 2, 3, 4, 5, 6, 7, 8;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 1110
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 51
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 1
+      typeId: 1
+      mapId: 1
+      name: "inv_sung_125"
+      version: "0.0.2"
+      classmap_description: "Mapa Inversor Sungrow 125KW"
+      classmap_path: "inverterFSA.cfg"
+    }
+  }
+  devices {
+    name: "Inverter UG3"
+    manufacturer: "Sungrow"
+    model: "125KW"
+    class_id: 1
+    ug: 3
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.121"
+      port: 502
+      baud_rate: 9600
+      num_devs: 8
+      addr: 1
+      device: "/dev/ttyUSB0"
+      address_list: "1, 2, 3, 4, 5, 6, 7, 8;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 1210
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 51
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 1
+      typeId: 1
+      mapId: 1
+      name: "inv_sung_125"
+      version: "0.0.2"
+      classmap_description: "Mapa Inversor Sungrow 125KW"
+      classmap_path: "inverterFSA.cfg"
+    }
+  }
+  devices {
+    name: "Inverter UG4"
+    manufacturer: "Sungrow"
+    model: "125KW"
+    class_id: 1
+    ug: 4
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.131"
+      port: 502
+      baud_rate: 9600
+      num_devs: 8
+      addr: 1
+      device: "/dev/ttyUSB0"
+      address_list: "1, 2, 3, 4, 5, 6, 7, 8;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 1310
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 51
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 1
+      typeId: 1
+      mapId: 1
+      name: "inv_sung_125"
+      version: "0.0.2"
+      classmap_description: "Mapa Inversor Sungrow 125KW"
+      classmap_path: "inverterFSA.cfg"
+    }
+  }
+  devices {
+    name: "Inverter UG5"
+    manufacturer: "Sungrow"
+    model: "125KW"
+    class_id: 1
+    ug: 5
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.141"
+      port: 502
+      baud_rate: 9600
+      num_devs: 8
+      addr: 1
+      device: "/dev/ttyUSB0"
+      address_list: "1, 2, 3, 4, 5, 6, 7, 8;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 1410
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 51
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 1
+      typeId: 1
+      mapId: 1
+      name: "inv_sung_125"
+      version: "0.0.2"
+      classmap_description: "Mapa Inversor Sungrow 125KW"
+      classmap_path: "inverterFSA.cfg"
+    }
+  }
+  devices {
+    name: "medidor EC1"
+    manufacturer: "ati"
+    model: "nUCD2387/ET-med"
+    class_id: 2
+    ug: 1
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.200"
+      port: 502
+      baud_rate: 9600
+      num_devs: 1
+      addr: 1
+      device: "/dev/ttyUSB0"
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 200
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 2
+      typeId: 7
+      mapId: 2
+      name: "nucd"
+      version: "0.0.2"
+      classmap_description: "Mapa nUCD2387/ET-med"
+      classmap_path: "meter_nucdFSA.cfg"
+    }
+  }
+  devices {
+    name: "medidor EC2"
+    manufacturer: "ati"
+    model: "nUCD2387/ET-med"
+    class_id: 2
+    ug: 2
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.201"
+      port: 502
+      baud_rate: 9600
+      num_devs: 1
+      addr: 1
+      device: "/dev/ttyUSB0"
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 201
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 2
+      typeId: 7
+      mapId: 2
+      name: "nucd"
+      version: "0.0.2"
+      classmap_description: "Mapa nUCD2387/ET-med"
+      classmap_path: "meter_nucdFSA.cfg"
+    }
+  }
+  devices {
+    name: "medidor EC3"
+    manufacturer: "ati"
+    model: "nUCD2387/ET-med"
+    class_id: 2
+    ug: 3
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.202"
+      port: 502
+      baud_rate: 9600
+      num_devs: 1
+      addr: 1
+      device: "/dev/ttyUSB0"
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 202
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 2
+      typeId: 7
+      mapId: 2
+      name: "nucd"
+      version: "0.0.2"
+      classmap_description: "Mapa nUCD2387/ET-med"
+      classmap_path: "meter_nucdFSA.cfg"
+    }
+  }
+  devices {
+    name: "medidor EC4"
+    manufacturer: "ati"
+    model: "nUCD2387/ET-med"
+    class_id: 2
+    ug: 4
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.203"
+      port: 502
+      baud_rate: 9600
+      num_devs: 1
+      addr: 1
+      device: "/dev/ttyUSB0"
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 203
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 2
+      typeId: 7
+      mapId: 2
+      name: "nucd"
+      version: "0.0.2"
+      classmap_description: "Mapa nUCD2387/ET-med"
+      classmap_path: "meter_nucdFSA.cfg"
+    }
+  }
+  devices {
+    name: "medidor EC5"
+    manufacturer: "ati"
+    model: "nUCD2387/ET-med"
+    class_id: 2
+    ug: 5
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.204"
+      port: 502
+      baud_rate: 9600
+      num_devs: 1
+      addr: 1
+      device: "/dev/ttyUSB0"
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 204
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 2
+      typeId: 7
+      mapId: 2
+      name: "nucd"
+      version: "0.0.2"
+      classmap_description: "Mapa nUCD2387/ET-med"
+      classmap_path: "meter_nucdFSA.cfg"
+    }
+  }
+  devices {
+    name: "Esta\303\247\303\243o Solarim\303\251trica"
+    manufacturer: "Hyl"
+    model: "xxxx"
+    class_id: 3
+    ug: 1
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.23"
+      port: 502
+      baud_rate: 9600
+      num_devs: 1
+      addr: 1
+      device: "/dev/ttyS4"
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 10
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 251
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_BINARY_
+    }
+    classmap {
+      classId: 3
+      typeId: 5
+      mapId: 3
+      name: "station_1"
+      version: "0.0.2"
+      classmap_description: "Mapa Sol. Hyl"
+      classmap_path: "station_1FSA.cfg"
+    }
+  }
+  devices {
+    name: "Stringbox UG1"
+    manufacturer: "Sungrow"
+    model: "xptz"
+    class_id: 4
+    ug: 1
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.101"
+      port: 502
+      baud_rate: 9600
+      num_devs: 8
+      addr: 9
+      device: "/dev/ttyUSB0"
+      address_list: "9, 10, 11, 12, 13, 14, 15, 16;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 10100
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_ANALOG_
+    }
+    classmap {
+      classId: 4
+      typeId: 10
+      mapId: 4
+      name: "stringbox"
+      version: "v0.0.1"
+      classmap_description: "Mapa Stringbox Sungrow"
+      classmap_path: "stringboxFSA.cfg"
+    }
+  }
+  devices {
+    name: "Stringbox UG2"
+    manufacturer: "Sungrow"
+    model: "xptz"
+    class_id: 4
+    ug: 2
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.111"
+      port: 502
+      baud_rate: 9600
+      num_devs: 8
+      addr: 9
+      device: "/dev/ttyUSB0"
+      address_list: "9, 10, 11, 12, 13, 14, 15, 16"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 11100
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_ANALOG_
+    }
+    classmap {
+      classId: 4
+      typeId: 10
+      mapId: 4
+      name: "stringbox"
+      version: "0.0.2"
+      classmap_description: "Mapa Stringbox Sungrow"
+      classmap_path: "stringboxFSA.cfg"
+    }
+  }
+  devices {
+    name: "Stringbox UG3"
+    manufacturer: "Sungrow"
+    model: "xptz"
+    class_id: 4
+    ug: 3
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.121"
+      port: 502
+      baud_rate: 9600
+      num_devs: 8
+      addr: 9
+      device: "/dev/ttyUSB0"
+      address_list: "9, 10, 11, 12, 13, 14, 15, 16"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 12100
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_ANALOG_
+    }
+    classmap {
+      classId: 4
+      typeId: 10
+      mapId: 4
+      name: "stringbox"
+      version: "0.0.2"
+      classmap_description: "Mapa Stringbox Sungrow"
+      classmap_path: "stringboxFSA.cfg"
+    }
+  }
+  devices {
+    name: "Stringbox UG4"
+    manufacturer: "Sungrow"
+    model: "xptz"
+    class_id: 4
+    ug: 4
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.131"
+      port: 502
+      baud_rate: 9600
+      num_devs: 8
+      addr: 9
+      device: "/dev/ttyUSB0"
+      address_list: "9, 10, 11, 12, 13, 14, 15, 16"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 13100
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_ANALOG_
+    }
+    classmap {
+      classId: 4
+      typeId: 10
+      mapId: 4
+      name: "stringbox"
+      version: "0.0.2"
+      classmap_description: "Mapa Stringbox Sungrow"
+      classmap_path: "stringboxFSA.cfg"
+    }
+  }
+  devices {
+    name: "Stringbox UG5"
+    manufacturer: "Sungrow"
+    model: "xptz"
+    class_id: 4
+    ug: 5
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.141"
+      port: 502
+      baud_rate: 9600
+      num_devs: 8
+      addr: 9
+      device: "/dev/ttyUSB0"
+      address_list: "9, 10, 11, 12, 13, 14, 15, 16;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 14100
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_ANALOG_
+    }
+    classmap {
+      classId: 4
+      typeId: 10
+      mapId: 4
+      name: "stringbox"
+      version: "0.0.2"
+      classmap_description: "Mapa Stringbox Sungrow"
+      classmap_path: "stringboxFSA.cfg"
+    }
+  }
+  devices {
+    name: "Transformer UG1"
+    manufacturer: "Treetech"
+    model: "LAD"
+    class_id: 5
+    ug: 1
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.100"
+      port: 502
+      baud_rate: 9600
+      num_devs: 1
+      addr: 1
+      device: "/dev/ttyUSB0"
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 100
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_BINARY_
+    }
+    classmap {
+      classId: 5
+      typeId: 6
+      mapId: 5
+      name: "transformer"
+      version: "0.0.2"
+      classmap_description: "Mapa Transformer Treetech"
+      classmap_path: "transformerFSA.cfg"
+    }
+  }
+  devices {
+    name: "Transformer UG2"
+    manufacturer: "Treetech"
+    model: "LAD"
+    class_id: 5
+    ug: 2
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.110"
+      port: 502
+      baud_rate: 9600
+      num_devs: 1
+      addr: 1
+      device: "/dev/ttyUSB0"
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 110
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_BINARY_
+    }
+    classmap {
+      classId: 5
+      typeId: 6
+      mapId: 5
+      name: "transformer"
+      version: "0.0.2"
+      classmap_description: "Mapa Transformer Treetech"
+      classmap_path: "transformerFSA.cfg"
+    }
+  }
+  devices {
+    name: "Transformer UG3"
+    manufacturer: "Treetech"
+    model: "LAD"
+    class_id: 5
+    ug: 3
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.120"
+      port: 502
+      baud_rate: 9600
+      num_devs: 1
+      addr: 1
+      device: "/dev/ttyUSB0"
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 120
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_BINARY_
+    }
+    classmap {
+      classId: 5
+      typeId: 6
+      mapId: 5
+      name: "transformer"
+      version: "0.0.2"
+      classmap_description: "Mapa Transformer Treetech"
+      classmap_path: "transformerFSA.cfg"
+    }
+  }
+  devices {
+    name: "Transformer UG4"
+    manufacturer: "Treetech"
+    model: "LAD"
+    class_id: 5
+    ug: 4
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.130"
+      port: 502
+      baud_rate: 9600
+      num_devs: 1
+      addr: 1
+      device: "/dev/ttyUSB0"
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 130
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_BINARY_
+    }
+    classmap {
+      classId: 5
+      typeId: 6
+      mapId: 5
+      name: "transformer"
+      version: "0.0.2"
+      classmap_description: "Mapa Transformer Treetech"
+      classmap_path: "transformerFSA.cfg"
+    }
+  }
+  devices {
+    name: "Transformer UG5"
+    manufacturer: "Treetech"
+    model: "LAD"
+    class_id: 5
+    ug: 5
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.140"
+      port: 502
+      baud_rate: 9600
+      num_devs: 1
+      addr: 1
+      device: "/dev/ttyUSB0"
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 140
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_BINARY_
+    }
+    classmap {
+      classId: 5
+      typeId: 6
+      mapId: 5
+      name: "transformer"
+      version: "0.0.2"
+      classmap_description: "Mapa Transformer Treetech"
+      classmap_path: "transformerFSA.cfg"
+    }
+  }
+  devices {
+    name: "UTR3288io"
+    manufacturer: "ati"
+    model: "xptz"
+    class_id: 6
+    ug: 1
+    modbus_cfg {
+      mode: RTU_
+      ip: "192.168.20.17"
+      port: 502
+      baud_rate: 9600
+      num_devs: 1
+      addr: 1
+      device: "/dev/ttyS4"
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 10
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 1
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 252
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: "8.8.8.8"
+      port1: 22000
+      port2: 21000
+      port3: 8
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 0
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_BINARY_
+    }
+    classmap {
+      classId: 6
+      typeId: 11
+      mapId: 6
+      name: "utr3288io"
+      version: "0.0.2"
+      classmap_description: "Mapa UTR3288io"
+      classmap_path: "utr3288io.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (1) succeed to be published 
+
