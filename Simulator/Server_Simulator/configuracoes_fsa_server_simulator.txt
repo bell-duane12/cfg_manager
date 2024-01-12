@@ -574,7 +574,7 @@ configGw {
       failure_point: 10
       dnp3_failure_point_val: 0
       check_failure: false
-      dnp3_failure_point_type: OBJ_BINARY_
+      dnp3_failure_point_type: OBJ_COUNTER_
     }
     classmap {
       classId: 3
@@ -1172,4 +1172,3 @@ configGw {
 }
 
 >> MqttServerWrapper - Message (1) succeed to be published 
-
