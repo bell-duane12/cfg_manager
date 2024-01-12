@@ -266,9 +266,9 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_dnp3_cfg_from_file() {
   }
   
   if (dnp3_connections_map.size() > 2) {
-    etsConfigList.dnp3_cfg.master_id2 = dnp3_connections_map["3"].master_addr;
-    etsConfigList.dnp3_cfg.ip2 = dnp3_connections_map["3"].ip;
-    etsConfigList.dnp3_cfg.port2 = dnp3_connections_map["3"].port;
+    etsConfigList.dnp3_cfg.master_id3 = dnp3_connections_map["3"].master_addr;
+    etsConfigList.dnp3_cfg.ip3 = dnp3_connections_map["3"].ip;
+    etsConfigList.dnp3_cfg.port3 = dnp3_connections_map["3"].port;
   }
   
   etsConfigList.dnp3_cfg.uns_conn_token = std::stoi(unsolicited_conn_token); 

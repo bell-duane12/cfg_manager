@@ -290,11 +290,11 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_config_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\014config.proto\"\236\003\n\tDnp3Parms\022\025\n\routstati"
-  "on_id\030\001 \002(\r\022\013\n\003ip1\030\002 \002(\t\022\013\n\003ip2\030\003 \002(\t\022\013\n"
-  "\003ip3\030\004 \002(\t\022\r\n\005port1\030\005 \002(\r\022\r\n\005port2\030\006 \002(\r"
-  "\022\r\n\005port3\030\007 \002(\r\022\026\n\016uns_conn_token\030\010 \002(\r\022"
+  "on_id\030\001 \002(\r\022\013\n\003ip1\030\002 \002(\t\022\013\n\003ip2\030\003 \001(\t\022\013\n"
+  "\003ip3\030\004 \001(\t\022\r\n\005port1\030\005 \002(\r\022\r\n\005port2\030\006 \001(\r"
+  "\022\r\n\005port3\030\007 \001(\r\022\026\n\016uns_conn_token\030\010 \002(\r\022"
   "\020\n\010uns_addr\030\t \002(\r\022\022\n\nmaster_id1\030\n \002(\r\022\022\n"
-  "\nmaster_id2\030\013 \002(\r\022\022\n\nmaster_id3\030\014 \002(\r\022\037\n"
+  "\nmaster_id2\030\013 \001(\r\022\022\n\nmaster_id3\030\014 \001(\r\022\037\n"
   "\027analog_out_point_offset\030\r \002(\r\022\035\n\025binary"
   "_in_confirm_cmd\030\016 \002(\r\022\025\n\rfailure_point\030\017"
   " \002(\r\022\036\n\026dnp3_failure_point_val\030\020 \002(\005\022\025\n\r"
@@ -565,7 +565,7 @@ const char* Dnp3Parms::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // required string ip2 = 3;
+      // optional string ip2 = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_ip2();
@@ -576,7 +576,7 @@ const char* Dnp3Parms::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // required string ip3 = 4;
+      // optional string ip3 = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_ip3();
@@ -595,7 +595,7 @@ const char* Dnp3Parms::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // required uint32 port2 = 6;
+      // optional uint32 port2 = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           _Internal::set_has_port2(&has_bits);
@@ -603,7 +603,7 @@ const char* Dnp3Parms::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // required uint32 port3 = 7;
+      // optional uint32 port3 = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
           _Internal::set_has_port3(&has_bits);
@@ -635,7 +635,7 @@ const char* Dnp3Parms::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // required uint32 master_id2 = 11;
+      // optional uint32 master_id2 = 11;
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 88)) {
           _Internal::set_has_master_id2(&has_bits);
@@ -643,7 +643,7 @@ const char* Dnp3Parms::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // required uint32 master_id3 = 12;
+      // optional uint32 master_id3 = 12;
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 96)) {
           _Internal::set_has_master_id3(&has_bits);
@@ -747,7 +747,7 @@ failure:
         2, this->_internal_ip1(), target);
   }
 
-  // required string ip2 = 3;
+  // optional string ip2 = 3;
   if (cached_has_bits & 0x00000002u) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
       this->_internal_ip2().data(), static_cast<int>(this->_internal_ip2().length()),
@@ -757,7 +757,7 @@ failure:
         3, this->_internal_ip2(), target);
   }
 
-  // required string ip3 = 4;
+  // optional string ip3 = 4;
   if (cached_has_bits & 0x00000004u) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
       this->_internal_ip3().data(), static_cast<int>(this->_internal_ip3().length()),
@@ -773,13 +773,13 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(5, this->_internal_port1(), target);
   }
 
-  // required uint32 port2 = 6;
+  // optional uint32 port2 = 6;
   if (cached_has_bits & 0x00000020u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(6, this->_internal_port2(), target);
   }
 
-  // required uint32 port3 = 7;
+  // optional uint32 port3 = 7;
   if (cached_has_bits & 0x00000040u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(7, this->_internal_port3(), target);
@@ -803,13 +803,13 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(10, this->_internal_master_id1(), target);
   }
 
-  // required uint32 master_id2 = 11;
+  // optional uint32 master_id2 = 11;
   if (cached_has_bits & 0x00000400u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(11, this->_internal_master_id2(), target);
   }
 
-  // required uint32 master_id3 = 12;
+  // optional uint32 master_id3 = 12;
   if (cached_has_bits & 0x00000800u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(12, this->_internal_master_id3(), target);
@@ -871,20 +871,6 @@ size_t Dnp3Parms::RequiredFieldsByteSizeFallback() const {
         this->_internal_ip1());
   }
 
-  if (_internal_has_ip2()) {
-    // required string ip2 = 3;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_ip2());
-  }
-
-  if (_internal_has_ip3()) {
-    // required string ip3 = 4;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_ip3());
-  }
-
   if (_internal_has_outstation_id()) {
     // required uint32 outstation_id = 1;
     total_size += 1 +
@@ -897,20 +883,6 @@ size_t Dnp3Parms::RequiredFieldsByteSizeFallback() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_port1());
-  }
-
-  if (_internal_has_port2()) {
-    // required uint32 port2 = 6;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_port2());
-  }
-
-  if (_internal_has_port3()) {
-    // required uint32 port3 = 7;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_port3());
   }
 
   if (_internal_has_uns_conn_token()) {
@@ -932,20 +904,6 @@ size_t Dnp3Parms::RequiredFieldsByteSizeFallback() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_master_id1());
-  }
-
-  if (_internal_has_master_id2()) {
-    // required uint32 master_id2 = 11;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_master_id2());
-  }
-
-  if (_internal_has_master_id3()) {
-    // required uint32 master_id3 = 12;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_master_id3());
   }
 
   if (_internal_has_analog_out_point_offset()) {
@@ -993,21 +951,11 @@ size_t Dnp3Parms::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:Dnp3Parms)
   size_t total_size = 0;
 
-  if (((_has_bits_[0] & 0x0003ffff) ^ 0x0003ffff) == 0) {  // All required fields are present.
+  if (((_has_bits_[0] & 0x0003f399) ^ 0x0003f399) == 0) {  // All required fields are present.
     // required string ip1 = 2;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_ip1());
-
-    // required string ip2 = 3;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_ip2());
-
-    // required string ip3 = 4;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_ip3());
 
     // required uint32 outstation_id = 1;
     total_size += 1 +
@@ -1018,16 +966,6 @@ size_t Dnp3Parms::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_port1());
-
-    // required uint32 port2 = 6;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_port2());
-
-    // required uint32 port3 = 7;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_port3());
 
     // required uint32 uns_conn_token = 8;
     total_size += 1 +
@@ -1043,16 +981,6 @@ size_t Dnp3Parms::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_master_id1());
-
-    // required uint32 master_id2 = 11;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_master_id2());
-
-    // required uint32 master_id3 = 12;
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_master_id3());
 
     // required uint32 analog_out_point_offset = 13;
     total_size += 1 +
@@ -1088,6 +1016,55 @@ size_t Dnp3Parms::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000006u) {
+    // optional string ip2 = 3;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_ip2());
+    }
+
+    // optional string ip3 = 4;
+    if (cached_has_bits & 0x00000004u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_ip3());
+    }
+
+  }
+  if (cached_has_bits & 0x00000060u) {
+    // optional uint32 port2 = 6;
+    if (cached_has_bits & 0x00000020u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+          this->_internal_port2());
+    }
+
+    // optional uint32 port3 = 7;
+    if (cached_has_bits & 0x00000040u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+          this->_internal_port3());
+    }
+
+  }
+  if (cached_has_bits & 0x00000c00u) {
+    // optional uint32 master_id2 = 11;
+    if (cached_has_bits & 0x00000400u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+          this->_internal_master_id2());
+    }
+
+    // optional uint32 master_id3 = 12;
+    if (cached_has_bits & 0x00000800u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+          this->_internal_master_id3());
+    }
+
+  }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -1203,7 +1180,7 @@ void Dnp3Parms::CopyFrom(const Dnp3Parms& from) {
 }
 
 bool Dnp3Parms::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0003ffff) != 0x0003ffff) return false;
+  if ((_has_bits_[0] & 0x0003f399) != 0x0003f399) return false;
   return true;
 }
 

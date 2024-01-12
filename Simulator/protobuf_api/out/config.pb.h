@@ -287,7 +287,7 @@ class Dnp3Parms :
   std::string* _internal_mutable_ip1();
   public:
 
-  // required string ip2 = 3;
+  // optional string ip2 = 3;
   bool has_ip2() const;
   private:
   bool _internal_has_ip2() const;
@@ -307,7 +307,7 @@ class Dnp3Parms :
   std::string* _internal_mutable_ip2();
   public:
 
-  // required string ip3 = 4;
+  // optional string ip3 = 4;
   bool has_ip3() const;
   private:
   bool _internal_has_ip3() const;
@@ -353,7 +353,7 @@ class Dnp3Parms :
   void _internal_set_port1(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // required uint32 port2 = 6;
+  // optional uint32 port2 = 6;
   bool has_port2() const;
   private:
   bool _internal_has_port2() const;
@@ -366,7 +366,7 @@ class Dnp3Parms :
   void _internal_set_port2(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // required uint32 port3 = 7;
+  // optional uint32 port3 = 7;
   bool has_port3() const;
   private:
   bool _internal_has_port3() const;
@@ -418,7 +418,7 @@ class Dnp3Parms :
   void _internal_set_master_id1(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // required uint32 master_id2 = 11;
+  // optional uint32 master_id2 = 11;
   bool has_master_id2() const;
   private:
   bool _internal_has_master_id2() const;
@@ -431,7 +431,7 @@ class Dnp3Parms :
   void _internal_set_master_id2(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // required uint32 master_id3 = 12;
+  // optional uint32 master_id3 = 12;
   bool has_master_id3() const;
   private:
   bool _internal_has_master_id3() const;
@@ -1911,7 +1911,7 @@ inline void Dnp3Parms::set_allocated_ip1(std::string* ip1) {
   // @@protoc_insertion_point(field_set_allocated:Dnp3Parms.ip1)
 }
 
-// required string ip2 = 3;
+// optional string ip2 = 3;
 inline bool Dnp3Parms::_internal_has_ip2() const {
   bool value = (_has_bits_[0] & 0x00000002u) != 0;
   return value;
@@ -1982,7 +1982,7 @@ inline void Dnp3Parms::set_allocated_ip2(std::string* ip2) {
   // @@protoc_insertion_point(field_set_allocated:Dnp3Parms.ip2)
 }
 
-// required string ip3 = 4;
+// optional string ip3 = 4;
 inline bool Dnp3Parms::_internal_has_ip3() const {
   bool value = (_has_bits_[0] & 0x00000004u) != 0;
   return value;
@@ -2081,7 +2081,7 @@ inline void Dnp3Parms::set_port1(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:Dnp3Parms.port1)
 }
 
-// required uint32 port2 = 6;
+// optional uint32 port2 = 6;
 inline bool Dnp3Parms::_internal_has_port2() const {
   bool value = (_has_bits_[0] & 0x00000020u) != 0;
   return value;
@@ -2109,7 +2109,7 @@ inline void Dnp3Parms::set_port2(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:Dnp3Parms.port2)
 }
 
-// required uint32 port3 = 7;
+// optional uint32 port3 = 7;
 inline bool Dnp3Parms::_internal_has_port3() const {
   bool value = (_has_bits_[0] & 0x00000040u) != 0;
   return value;
@@ -2221,7 +2221,7 @@ inline void Dnp3Parms::set_master_id1(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:Dnp3Parms.master_id1)
 }
 
-// required uint32 master_id2 = 11;
+// optional uint32 master_id2 = 11;
 inline bool Dnp3Parms::_internal_has_master_id2() const {
   bool value = (_has_bits_[0] & 0x00000400u) != 0;
   return value;
@@ -2249,7 +2249,7 @@ inline void Dnp3Parms::set_master_id2(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:Dnp3Parms.master_id2)
 }
 
-// required uint32 master_id3 = 12;
+// optional uint32 master_id3 = 12;
 inline bool Dnp3Parms::_internal_has_master_id3() const {
   bool value = (_has_bits_[0] & 0x00000800u) != 0;
   return value;

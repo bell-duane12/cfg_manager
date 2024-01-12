@@ -22,19 +22,19 @@ message Dnp3Parms
   required uint32 outstation_id = 1;
   
   required string ip1 = 2;
-  required string ip2 = 3;
-  required string ip3 = 4;
+  optional string ip2 = 3;
+  optional string ip3 = 4;
   
   required uint32 port1 = 5;
-  required uint32 port2 = 6;
-  required uint32 port3 = 7;
+  optional uint32 port2 = 6;
+  optional uint32 port3 = 7;
   
   required uint32 uns_conn_token = 8;
   required uint32 uns_addr = 9;
   
   required uint32 master_id1 = 10;
-  required uint32 master_id2 = 11;
-  required uint32 master_id3 = 12;
+  optional uint32 master_id2 = 11;
+  optional uint32 master_id3 = 12;
   
   required uint32 analog_out_point_offset = 13;
   required uint32 binary_in_confirm_cmd = 14;
