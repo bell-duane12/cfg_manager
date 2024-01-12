@@ -4,7 +4,7 @@ header {
 }
 configGw {
   devices {
-    name: "Inverter UG1"
+    name: "inverter UG1"
     manufacturer: "Sungrow"
     model: "125KW"
     class_id: 1
@@ -57,7 +57,7 @@ configGw {
     }
   }
   devices {
-    name: "Inverter UG2"
+    name: "inverter UG2"
     manufacturer: "Sungrow"
     model: "125KW"
     class_id: 1
@@ -110,7 +110,7 @@ configGw {
     }
   }
   devices {
-    name: "Inverter UG3"
+    name: "inverter UG3"
     manufacturer: "Sungrow"
     model: "125KW"
     class_id: 1
@@ -163,7 +163,7 @@ configGw {
     }
   }
   devices {
-    name: "Inverter UG4"
+    name: "inverter UG4"
     manufacturer: "Sungrow"
     model: "125KW"
     class_id: 1
@@ -216,7 +216,7 @@ configGw {
     }
   }
   devices {
-    name: "Inverter UG5"
+    name: "inverter UG5"
     manufacturer: "Sungrow"
     model: "125KW"
     class_id: 1
@@ -506,7 +506,7 @@ configGw {
     dnp3_cfg {
       outstation_id: 204
       ip1: "172.16.6.253"
-      ip2: "172.16.6.253"
+      ip2: "162.16.6.253"
       ip3: ""
       port1: 22000
       port2: 21000
@@ -587,7 +587,7 @@ configGw {
     }
   }
   devices {
-    name: "Stringbox UG1"
+    name: "stringbox UG1"
     manufacturer: "Sungrow"
     model: "xptz"
     class_id: 4
@@ -634,13 +634,13 @@ configGw {
       typeId: 10
       mapId: 4
       name: "stringbox"
-      version: "v0.0.1"
+      version: "0.0.2"
       classmap_description: "Mapa Stringbox Sungrow"
       classmap_path: "stringboxFSA.cfg"
     }
   }
   devices {
-    name: "Stringbox UG2"
+    name: "stringbox UG2"
     manufacturer: "Sungrow"
     model: "xptz"
     class_id: 4
@@ -653,7 +653,7 @@ configGw {
       num_devs: 8
       addr: 9
       device: "/dev/ttyUSB0"
-      address_list: "9, 10, 11, 12, 13, 14, 15, 16"
+      address_list: "9, 10, 11, 12, 13, 14, 15, 16;"
       timeout: 1
       inter_polling: 5
       intra_polling: 2000
@@ -693,7 +693,7 @@ configGw {
     }
   }
   devices {
-    name: "Stringbox UG3"
+    name: "stringbox UG3"
     manufacturer: "Sungrow"
     model: "xptz"
     class_id: 4
@@ -706,7 +706,7 @@ configGw {
       num_devs: 8
       addr: 9
       device: "/dev/ttyUSB0"
-      address_list: "9, 10, 11, 12, 13, 14, 15, 16"
+      address_list: "9, 10, 11, 12, 13, 14, 15, 16;"
       timeout: 1
       inter_polling: 5
       intra_polling: 2000
@@ -746,7 +746,7 @@ configGw {
     }
   }
   devices {
-    name: "Stringbox UG4"
+    name: "stringbox UG4"
     manufacturer: "Sungrow"
     model: "xptz"
     class_id: 4
@@ -759,7 +759,7 @@ configGw {
       num_devs: 8
       addr: 9
       device: "/dev/ttyUSB0"
-      address_list: "9, 10, 11, 12, 13, 14, 15, 16"
+      address_list: "9, 10, 11, 12, 13, 14, 15, 16;"
       timeout: 1
       inter_polling: 5
       intra_polling: 2000
@@ -799,7 +799,7 @@ configGw {
     }
   }
   devices {
-    name: "Stringbox UG5"
+    name: "stringbox UG5"
     manufacturer: "Sungrow"
     model: "xptz"
     class_id: 4
@@ -852,7 +852,7 @@ configGw {
     }
   }
   devices {
-    name: "Transformer UG1"
+    name: "transformer UG1"
     manufacturer: "Treetech"
     model: "LAD"
     class_id: 5
@@ -892,7 +892,7 @@ configGw {
       failure_point: 9
       dnp3_failure_point_val: 0
       check_failure: true
-      dnp3_failure_point_type: OBJ_BINARY_
+      dnp3_failure_point_type: OBJ_COUNTER_
     }
     classmap {
       classId: 5
@@ -905,7 +905,7 @@ configGw {
     }
   }
   devices {
-    name: "Transformer UG2"
+    name: "transformer UG2"
     manufacturer: "Treetech"
     model: "LAD"
     class_id: 5
@@ -945,7 +945,7 @@ configGw {
       failure_point: 9
       dnp3_failure_point_val: 0
       check_failure: true
-      dnp3_failure_point_type: OBJ_BINARY_
+      dnp3_failure_point_type: OBJ_COUNTER_
     }
     classmap {
       classId: 5
@@ -958,7 +958,7 @@ configGw {
     }
   }
   devices {
-    name: "Transformer UG3"
+    name: "transformer UG3"
     manufacturer: "Treetech"
     model: "LAD"
     class_id: 5
@@ -998,7 +998,7 @@ configGw {
       failure_point: 9
       dnp3_failure_point_val: 0
       check_failure: true
-      dnp3_failure_point_type: OBJ_BINARY_
+      dnp3_failure_point_type: OBJ_COUNTER_
     }
     classmap {
       classId: 5
@@ -1011,7 +1011,7 @@ configGw {
     }
   }
   devices {
-    name: "Transformer UG4"
+    name: "transformer UG4"
     manufacturer: "Treetech"
     model: "LAD"
     class_id: 5
@@ -1051,7 +1051,7 @@ configGw {
       failure_point: 9
       dnp3_failure_point_val: 0
       check_failure: true
-      dnp3_failure_point_type: OBJ_BINARY_
+      dnp3_failure_point_type: OBJ_COUNTER_
     }
     classmap {
       classId: 5
@@ -1064,7 +1064,7 @@ configGw {
     }
   }
   devices {
-    name: "Transformer UG5"
+    name: "transformer UG5"
     manufacturer: "Treetech"
     model: "LAD"
     class_id: 5
@@ -1104,7 +1104,7 @@ configGw {
       failure_point: 9
       dnp3_failure_point_val: 0
       check_failure: true
-      dnp3_failure_point_type: OBJ_BINARY_
+      dnp3_failure_point_type: OBJ_COUNTER_
     }
     classmap {
       classId: 5
@@ -1172,3 +1172,4 @@ configGw {
 }
 
 >> MqttServerWrapper - Message (1) succeed to be published 
+
