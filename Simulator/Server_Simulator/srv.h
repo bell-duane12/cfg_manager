@@ -46,7 +46,6 @@ typedef struct {
   unsigned int equip_id;
 } TDnp3Parms;
 
-// Tambem pode pegar do banco, pra ficar mais generico
 typedef enum {
   TCP = 1,
   RTU = 2,
@@ -97,16 +96,17 @@ typedef struct {
   TEtsClass classmap;   
                 
 /*
-    uint64_t id;
-    uint32_t dnp3Addr;
-    uint32_t integrityInterval;
-    bool class1;
-    bool class2;
-    bool class3;
-    uint32_t classInterval;
-    uint32_t timeout;
-    uint32_t offLineTimeout;
+  uint64_t id;
+  uint32_t dnp3Addr;
+  uint32_t integrityInterval;
+  bool class1;
+  bool class2;
+  bool class3;
+  uint32_t classInterval;
+  uint32_t timeout;
+  uint32_t offLineTimeout;
 */
+
 } TEtsListConfig;
 
 typedef struct {
@@ -119,185 +119,170 @@ typedef struct {
   unsigned int pubInterval;
 } TBrokerConfig;
 
-typedef struct
-{
-
-    uint32_t point;
-    float value;
-    uint64_t timestamp;
-    bool online;
-
+typedef struct {
+  uint32_t point;
+  float value;
+  uint64_t timestamp;
+  bool online;
 } TEtsListObjectsValues;
 
-typedef struct
-{
-
-    ObjType objType;
-    std::vector<TEtsListObjectsValues> alarmObjects;
-    std::vector<TEtsListObjectsValues> staticObjects;
-
+typedef struct {
+  ObjType objType;
+  std::vector<TEtsListObjectsValues> alarmObjects;
+  std::vector<TEtsListObjectsValues> staticObjects;
 } TEtsListObjects;
 
-class MqttServerWrapper : public mosqpp::mosquittopp
-{
+class MqttServerWrapper : public mosqpp::mosquittopp {
 
-    /*********************************
-        BASIC INFO FROM CONNECTION
-    *********************************/
+  /*********************************
+      BASIC INFO FROM CONNECTION
+  *********************************/
 
 public:
-    typedef enum : int
-    {
-        
-        NOT_CONNECTED = 0,
-        CONNECTED,
-        COULD_NOT_CONNECT
 
-    } CONNECTION;
+typedef enum : int {      
+  NOT_CONNECTED = 0,
+  CONNECTED,
+  COULD_NOT_CONNECT
+} CONNECTION;
 
 private:
-    const char *id;     // Subscriber ID
-    const char *host;   // Host
-    int port;           // Port
-    int keepalive;      // The number of seconds after which the broker should send a PING message
-                        // to the client if no other messages have been exchanged in that time.
-    const char *user;   // User
-    const char *passw;  // Password
-    uint64_t gatewayID; // Gateway ID
+  const char* id;     // Subscriber ID
+  const char* host;   // Host
+  int port;           // Port
+  int keepalive;      // The number of seconds after which the broker should send a PING message
+                      // to the client if no other messages have been exchanged in that time.
+  const char* user;   // User
+  const char* passw;  // Password
+  uint64_t gatewayID; // Gateway ID
 
-    int connected; // Connected to server. 0 not connected
-    int subscriptions;  // Number of subscriptions
+  int connected;      // Connected to server. 0 not connected
+  int subscriptions;  // Number of subscriptions
 
 
-    /*********************************
-        USER COMMANDS
-    *********************************/
+  /*********************************
+      USER COMMANDS
+  *********************************/
    
 public:
-    bool is_connected();
+  bool is_connected();
 
-    /*********************************
-        BROKER EVENTS
-    *********************************/
+  /*********************************
+      BROKER EVENTS
+  *********************************/
 
 private:
-    // Executes on connection
-    void on_connect(int rc);
+  // Executes on connection
+  void on_connect(int rc);
 
-    // Executes on disconnection
-    void on_disconnect(int rc);
+  // Executes on disconnection
+  void on_disconnect(int rc);
 
-    // Executes on a publication
-    void on_publish(int mid);
+  // Executes on a publication
+  void on_publish(int mid);
 
-    // Execute on a subscribe
-    void on_subscribe(int mid, int qos_count, const int *granted_qos);
+  // Execute on a subscribe
+  void on_subscribe(int mid, int qos_count, const int* granted_qos);
 
-    // Executes on a new message
-    void on_message(const struct mosquitto_message *message);
+  // Executes on a new message
+  void on_message(const struct mosquitto_message* message);
 
-    /*********************************
-        PROTOBUF PREPARE DATA
-    *********************************/
-    // Mounts header
-    void mountHeader(HeaderMessage &h, MessageType, uint64_t serial, uint64_t reqId);
+  /*********************************
+      PROTOBUF PREPARE DATA
+  *********************************/
+  // Mount header
+  void mountHeader(HeaderMessage& h, MessageType, uint64_t serial, uint64_t reqId);
 
-    // Dispachs Upload
-    bool dispachUpload(UploadToGateway &upload);
-
-public:
-    // Class Constructor
-    MqttServerWrapper(const char *_host, const int &_port,
-                                     const char *_user, const char *_passw,
-                                     const uint64_t &_gatewayID);
-
-    // Class Destructor
-    ~MqttServerWrapper();
-
-    /*********************************
-        MESSAGE SEND COMMANDS
-    *********************************/
+  // Dispatch Upload
+  bool dispachUpload(UploadToGateway& upload);
 
 public:
-    bool configEts(uint64_t reqId, std::vector<TEtsListConfig> &etsConfigList);
-    bool sendTC(uint64_t reqId, uint64_t serial, uint16_t point, DOType operation, uint32_t cmd_timeout, uint32_t t = 0);
-    bool sendAC(uint64_t reqId, uint64_t serial, uint16_t point, AOType operation, uint32_t cmd_timeout, uint32_t t = 0);
-    bool getETSTime(uint64_t reqId, uint64_t serial);
-    bool configETSTime(uint64_t reqId, uint64_t serial, uint64_t rtcdata = 0);
-    bool enableETS(uint64_t reqId, uint64_t serial);
-    bool disableETS(uint64_t reqId, uint64_t serial);
-    bool getTOChanges(uint64_t reqId, uint64_t serial);
-    bool getETSState(uint64_t reqId, uint64_t serial);
+
+  // Class Constructor
+  MqttServerWrapper(const char* _host, const int& _port,
+                    const char* _user, const char* _passw,
+                    const uint64_t& _gatewayID);
+
+  // Class Destructor
+  ~MqttServerWrapper();
+
+  /*********************************
+      MESSAGE SEND COMMANDS
+  *********************************/
+
+public:
+  bool configEts(uint64_t reqId, std::vector<TEtsListConfig>& etsConfigList);
+  bool sendTC(uint64_t reqId, uint64_t serial, uint16_t point, DOType operation, uint32_t cmd_timeout, uint32_t t = 0);
+  bool sendAC(uint64_t reqId, uint64_t serial, uint16_t point, AOType operation, uint32_t cmd_timeout, uint32_t t = 0);
+  bool getETSTime(uint64_t reqId, uint64_t serial);
+  bool configETSTime(uint64_t reqId, uint64_t serial, uint64_t rtcdata = 0);
+  bool enableETS(uint64_t reqId, uint64_t serial);
+  bool disableETS(uint64_t reqId, uint64_t serial);
+  bool getTOChanges(uint64_t reqId, uint64_t serial);
+  bool getETSState(uint64_t reqId, uint64_t serial);
     
-    bool sendLoggerCommand(uint64_t reqId, uint64_t serial, bool operation);
-    bool sendEtsStatusRequest(uint64_t reqId, uint64_t serial);
-    bool sendThreadCommand(uint64_t reqId, uint64_t serial, ThrCmdType operation);
-    /*********************************
-        MESSAGE RESPONSE COMMANDS
-    *********************************/
+  bool sendLoggerCommand(uint64_t reqId, uint64_t serial, bool operation);
+  bool sendEtsStatusRequest(uint64_t reqId, uint64_t serial);
+  bool sendThreadCommand(uint64_t reqId, uint64_t serial, ThrCmdType operation);
+  
+  /*********************************
+      MESSAGE RESPONSE COMMANDS
+  *********************************/
 
-    /* ---------- */
 private:
-    void configEtsResponse(const HeaderMessage &h, const ConfigGatewayResponse &gwr);
+  void configEtsResponse(const HeaderMessage& h, const ConfigGatewayResponse& gwr);
 
 protected:
-    void ackConfigEts(uint64_t reqId, uint32_t numdevices);
-    void nackConfigEts(uint64_t reqId, uint32_t numdevices);
+  void ackConfigEts(uint64_t reqId, uint32_t numdevices);
+  void nackConfigEts(uint64_t reqId, uint32_t numdevices);
 
-    /* ---------- */
 private:
-    void sendTCResponse(const HeaderMessage &h, const DigitalCommand &c);
-    void sendACResponse(const HeaderMessage &h, const AnalogCommand &c);
+  void sendTCResponse(const HeaderMessage& h, const DigitalCommand& c);
+  void sendACResponse(const HeaderMessage& h, const AnalogCommand& c);
 
 protected:
-    void ackTelecommand(uint64_t reqId, uint64_t serial, uint16_t point);
-    void nackTelecommand(uint64_t reqId, uint64_t serial, uint16_t point);
-    void ackAnalogCommand(uint64_t reqId, uint64_t serial, uint16_t point);
-    void nackAnalogCommand(uint64_t reqId, uint64_t serial, uint16_t point);
+  void ackTelecommand(uint64_t reqId, uint64_t serial, uint16_t point);
+  void nackTelecommand(uint64_t reqId, uint64_t serial, uint16_t point);
+  void ackAnalogCommand(uint64_t reqId, uint64_t serial, uint16_t point);
+  void nackAnalogCommand(uint64_t reqId, uint64_t serial, uint16_t point);
 
-    /* ---------- */
 private:
-    void mountCmdEtsState(const HeaderMessage &h, const ReadCommandClass &c);
-    void MountEtsNotification(const HeaderMessage &h, const NotificationValues &v);
+  void mountCmdEtsState(const HeaderMessage& h, const ReadCommandClass& c);
+  void MountEtsNotification(const HeaderMessage& h, const NotificationValues& v);
 
 protected:
-    void reportETSState(uint64_t reqId, uint64_t serial, bool etsConf, bool etsUp,
-                               bool etsAlarmed, bool etsEnabled, std::vector<TEtsListObjects> values);
+  void reportETSState(uint64_t reqId, uint64_t serial, bool etsConf, bool etsUp,
+                      bool etsAlarmed, bool etsEnabled, std::vector<TEtsListObjects> values);
 
-    /* ---------- */
 private:
-    void getETSTimeCommand(const HeaderMessage &h, const RTCCommands &c);
+  void getETSTimeCommand(const HeaderMessage& h, const RTCCommands& c);
 
 protected:
-    void ackConfigETSTime(uint64_t reqId, uint64_t serial);
-    void nackConfigETSTime(uint64_t reqId, uint64_t serial);
-    void ackRtcAnswer(uint64_t reqId, uint64_t serial, uint64_t timeStamp);
-    void nackRtcAnswer(uint64_t reqId, uint64_t serial);
+  void ackConfigETSTime(uint64_t reqId, uint64_t serial);
+  void nackConfigETSTime(uint64_t reqId, uint64_t serial);
+  void ackRtcAnswer(uint64_t reqId, uint64_t serial, uint64_t timeStamp);
+  void nackRtcAnswer(uint64_t reqId, uint64_t serial);
 
-    /* ---------- */
 private:
-    void enableDisableETS(const HeaderMessage &h, bool op);
+  void enableDisableETS(const HeaderMessage& h, bool op);
 
 protected:
-    void ackEnableETS(uint64_t reqId, uint64_t serial);
-    void ackDisableETS(uint64_t reqId, uint64_t serial);
+  void ackEnableETS(uint64_t reqId, uint64_t serial);
+  void ackDisableETS(uint64_t reqId, uint64_t serial);
 
-    /* ---------- */
 public:
-    void etsUp(uint64_t serial);
+  void etsUp(uint64_t serial);
 
-    /* ---------- */
 public:
-    void etsDown(uint64_t serial);
+  void etsDown(uint64_t serial);
 
-    /* ---------- */
 public:
-    void setASRId(uint64_t gwid, bool configured);
+  void setASRId(uint64_t gwid, bool configured);
 
-    /* ---------- */
 public:
-    void sssFailure();
-    bool keepAlive();
+  void sssFailure();
+  bool keepAlive();
+  
 };
 
 #endif // TESTE_COMUNICACAO_H
