@@ -67,6 +67,7 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_cfg_from_file() {
     modbus_config.port = cfg_reader.Get("modbus", "port", "error");
     if (modbus_config.port.compare("error") == 0)
       return false;
+    modbus_config.device = cfg_reader.Get("modbus", "device", "");
   }
   else if (type.compare("RTU") == 0) {
     modbus_config.type = mRTU;
@@ -77,7 +78,7 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_cfg_from_file() {
     if (modbus_config.baud.compare("error") == 0)
       return false;    
     modbus_config.ip = cfg_reader.Get("modbus", "ip", "error");
-    modbus_config.port = cfg_reader.Get("modbus", "port", "error");
+    modbus_config.port = cfg_reader.Get("modbus", "port", "0");
   }
   else if (type.compare("RTU_TCP") == 0) {
     modbus_config.type = mRTU_TCP;
@@ -87,6 +88,7 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_cfg_from_file() {
     modbus_config.port = cfg_reader.Get("modbus", "port", "error");
     if (modbus_config.port.compare("error") == 0)
       return false;
+    modbus_config.device = cfg_reader.Get("modbus", "device", "");
   }
   else
     return false;
@@ -113,9 +115,9 @@ bool Dnp3_Modbus_Relay_Config_Manager::load_modbus_cfg_from_file() {
   etsConfigList.modbus_cfg.mode = (TModbusTypeConn) modbus_config.type; 
   etsConfigList.modbus_cfg.addr = modbus_config.address;
   etsConfigList.modbus_cfg.ip = modbus_config.ip;
-  if (type.compare("RTU") != 0) {
-    etsConfigList.modbus_cfg.port = std::stoi(modbus_config.port);
-  }
+
+  etsConfigList.modbus_cfg.port = std::stoi(modbus_config.port);
+
   etsConfigList.modbus_cfg.device = modbus_config.device;
   etsConfigList.modbus_cfg.baud_rate = modbus_config.baud;    
   etsConfigList.modbus_cfg.num_devs = modbus_config.numDevs;
