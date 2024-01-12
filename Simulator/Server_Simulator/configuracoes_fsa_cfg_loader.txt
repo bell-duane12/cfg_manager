@@ -3,7 +3,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/inverterUG1A.cfg': version = 0.0.2
  Modbus type = TCP
  Modbus ip = 172.16.6.101
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 1
  Modbus numDevs = 8
@@ -66,7 +66,7 @@ configGw {
       baud_rate: ""
       num_devs: 8
       addr: 1
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "1, 4, 6, 5, 7, 8, 3, 2;"
       timeout: 1
       inter_polling: 5
@@ -83,12 +83,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 2537531392
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 21963
+      master_id3: 0
       analog_out_point_offset: 51
       binary_in_confirm_cmd: 1
       failure_point: 10
@@ -118,7 +118,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/inverterUG2A.cfg': version = 0.0.2
  Modbus type = TCP
  Modbus ip = 172.16.6.111
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 1
  Modbus numDevs = 8
@@ -181,7 +181,7 @@ configGw {
       baud_rate: ""
       num_devs: 8
       addr: 1
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "1, 2, 3, 4, 5, 6, 7, 8;"
       timeout: 1
       inter_polling: 5
@@ -198,12 +198,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 1611679424
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 21921
+      master_id3: 0
       analog_out_point_offset: 51
       binary_in_confirm_cmd: 1
       failure_point: 10
@@ -233,7 +233,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/inverterUG3A.cfg': version = 0.0.2
  Modbus type = TCP
  Modbus ip = 172.16.6.121
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 1
  Modbus numDevs = 8
@@ -296,7 +296,7 @@ configGw {
       baud_rate: ""
       num_devs: 8
       addr: 1
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "1, 2, 3, 4, 5, 6, 7, 8;"
       timeout: 1
       inter_polling: 5
@@ -313,12 +313,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 513784320
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 21853
+      master_id3: 0
       analog_out_point_offset: 51
       binary_in_confirm_cmd: 1
       failure_point: 10
@@ -348,7 +348,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/inverterUG4A.cfg': version = 0.0.2
  Modbus type = TCP
  Modbus ip = 172.16.6.131
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 1
  Modbus numDevs = 8
@@ -411,7 +411,7 @@ configGw {
       baud_rate: ""
       num_devs: 8
       addr: 1
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "1, 2, 3, 4, 5, 6, 7, 8;"
       timeout: 1
       inter_polling: 5
@@ -428,12 +428,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 1671811712
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 22032
+      master_id3: 0
       analog_out_point_offset: 51
       binary_in_confirm_cmd: 1
       failure_point: 10
@@ -463,7 +463,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/inverterUG5A.cfg': version = 0.0.2
  Modbus type = TCP
  Modbus ip = 172.16.6.141
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 1
  Modbus numDevs = 8
@@ -526,7 +526,7 @@ configGw {
       baud_rate: ""
       num_devs: 8
       addr: 1
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "1, 2, 3, 4, 5, 6, 7, 8;"
       timeout: 1
       inter_polling: 5
@@ -543,12 +543,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 3641395488
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 22002
+      master_id3: 0
       analog_out_point_offset: 51
       binary_in_confirm_cmd: 1
       failure_point: 10
@@ -578,7 +578,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/meterNUCD_EC1.cfg': version = 0.0.
  Modbus type = TCP
  Modbus ip = 172.16.6.200
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 1
  Modbus numDevs = 1
@@ -641,7 +641,7 @@ configGw {
       baud_rate: ""
       num_devs: 1
       addr: 1
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "1;"
       timeout: 1
       inter_polling: 5
@@ -658,12 +658,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 3449849984
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 21931
+      master_id3: 0
       analog_out_point_offset: 0
       binary_in_confirm_cmd: 1
       failure_point: 9
@@ -693,7 +693,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/meterNUCD_EC2.cfg': version = 0.0.
  Modbus type = TCP
  Modbus ip = 172.16.6.201
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 1
  Modbus numDevs = 1
@@ -756,7 +756,7 @@ configGw {
       baud_rate: ""
       num_devs: 1
       addr: 1
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "1;"
       timeout: 1
       inter_polling: 5
@@ -773,12 +773,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 4244023216
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 22066
+      master_id3: 0
       analog_out_point_offset: 0
       binary_in_confirm_cmd: 1
       failure_point: 9
@@ -808,7 +808,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/meterNUCD_EC3.cfg': version = 0.0.
  Modbus type = TCP
  Modbus ip = 172.16.6.202
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 1
  Modbus numDevs = 1
@@ -871,7 +871,7 @@ configGw {
       baud_rate: ""
       num_devs: 1
       addr: 1
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "1;"
       timeout: 1
       inter_polling: 5
@@ -888,12 +888,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 3929616464
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 21953
+      master_id3: 0
       analog_out_point_offset: 0
       binary_in_confirm_cmd: 1
       failure_point: 9
@@ -923,7 +923,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/meterNUCD_EC4.cfg': version = 0.0.
  Modbus type = TCP
  Modbus ip = 172.16.6.203
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 1
  Modbus numDevs = 1
@@ -986,7 +986,7 @@ configGw {
       baud_rate: ""
       num_devs: 1
       addr: 1
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "1;"
       timeout: 1
       inter_polling: 5
@@ -1003,12 +1003,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 1429690064
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 22056
+      master_id3: 0
       analog_out_point_offset: 0
       binary_in_confirm_cmd: 1
       failure_point: 9
@@ -1038,7 +1038,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/meterNUCD_EC5.cfg': version = 0.0.
  Modbus type = TCP
  Modbus ip = 172.16.6.204
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 1
  Modbus numDevs = 1
@@ -1101,7 +1101,7 @@ configGw {
       baud_rate: ""
       num_devs: 1
       addr: 1
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "1;"
       timeout: 1
       inter_polling: 5
@@ -1118,12 +1118,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 1863331184
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 21975
+      master_id3: 0
       analog_out_point_offset: 0
       binary_in_confirm_cmd: 1
       failure_point: 9
@@ -1153,7 +1153,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/station_1.cfg': version = 0.0.2
  Modbus type = TCP
  Modbus ip = 172.16.6.23
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyS4
  Modbus baud rate = 
  Modbus address = 1
  Modbus numDevs = 1
@@ -1216,7 +1216,7 @@ configGw {
       baud_rate: ""
       num_devs: 1
       addr: 1
-      device: ""
+      device: "/dev/ttyS4"
       address_list: "1;"
       timeout: 1
       inter_polling: 10
@@ -1233,12 +1233,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 3195563520
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 21869
+      master_id3: 0
       analog_out_point_offset: 0
       binary_in_confirm_cmd: 1
       failure_point: 10
@@ -1268,7 +1268,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/stringboxUG1A.cfg': version = 0.0.
  Modbus type = TCP
  Modbus ip = 172.16.6.101
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 9
  Modbus numDevs = 8
@@ -1331,7 +1331,7 @@ configGw {
       baud_rate: ""
       num_devs: 8
       addr: 9
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "9, 10, 11, 12, 13, 14, 15, 16;"
       timeout: 1
       inter_polling: 5
@@ -1348,12 +1348,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 150477456
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 22000
+      master_id3: 0
       analog_out_point_offset: 0
       binary_in_confirm_cmd: 1
       failure_point: 10
@@ -1383,7 +1383,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/stringboxUG2A.cfg': version = 0.0.
  Modbus type = TCP
  Modbus ip = 172.16.6.111
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 9
  Modbus numDevs = 8
@@ -1446,7 +1446,7 @@ configGw {
       baud_rate: ""
       num_devs: 8
       addr: 9
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "9, 10, 11, 12, 13, 14, 15, 16;"
       timeout: 1
       inter_polling: 5
@@ -1463,12 +1463,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 1910606704
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 22040
+      master_id3: 0
       analog_out_point_offset: 0
       binary_in_confirm_cmd: 1
       failure_point: 10
@@ -1498,7 +1498,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/stringboxUG3A.cfg': version = 0.0.
  Modbus type = TCP
  Modbus ip = 172.16.6.121
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 9
  Modbus numDevs = 8
@@ -1561,7 +1561,7 @@ configGw {
       baud_rate: ""
       num_devs: 8
       addr: 9
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "9, 10, 11, 12, 13, 14, 15, 16;"
       timeout: 1
       inter_polling: 5
@@ -1578,12 +1578,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 2779590240
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 21874
+      master_id3: 0
       analog_out_point_offset: 0
       binary_in_confirm_cmd: 1
       failure_point: 10
@@ -1613,7 +1613,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/stringboxUG4A.cfg': version = 0.0.
  Modbus type = TCP
  Modbus ip = 172.16.6.131
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 9
  Modbus numDevs = 8
@@ -1676,7 +1676,7 @@ configGw {
       baud_rate: ""
       num_devs: 8
       addr: 9
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "9, 10, 11, 12, 13, 14, 15, 16;"
       timeout: 1
       inter_polling: 5
@@ -1693,12 +1693,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 2579030256
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 22087
+      master_id3: 0
       analog_out_point_offset: 0
       binary_in_confirm_cmd: 1
       failure_point: 10
@@ -1728,7 +1728,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/stringboxUG5A.cfg': version = 0.0.
  Modbus type = TCP
  Modbus ip = 172.16.6.141
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 9
  Modbus numDevs = 8
@@ -1791,7 +1791,7 @@ configGw {
       baud_rate: ""
       num_devs: 8
       addr: 9
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "9, 10, 11, 12, 13, 14, 15, 16;"
       timeout: 1
       inter_polling: 5
@@ -1808,12 +1808,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 3885609488
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 21863
+      master_id3: 0
       analog_out_point_offset: 0
       binary_in_confirm_cmd: 1
       failure_point: 10
@@ -1843,7 +1843,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/transformerUG1_treetech.cfg': vers
  Modbus type = TCP
  Modbus ip = 172.16.6.100
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 1
  Modbus numDevs = 1
@@ -1906,7 +1906,7 @@ configGw {
       baud_rate: ""
       num_devs: 1
       addr: 1
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "1;"
       timeout: 1
       inter_polling: 5
@@ -1923,12 +1923,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 2692801920
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 21956
+      master_id3: 0
       analog_out_point_offset: 0
       binary_in_confirm_cmd: 1
       failure_point: 9
@@ -1958,7 +1958,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/transformerUG2_treetech.cfg': vers
  Modbus type = TCP
  Modbus ip = 172.16.6.110
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 1
  Modbus numDevs = 1
@@ -2021,7 +2021,7 @@ configGw {
       baud_rate: ""
       num_devs: 1
       addr: 1
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "1;"
       timeout: 1
       inter_polling: 5
@@ -2038,12 +2038,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 347837456
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 21886
+      master_id3: 0
       analog_out_point_offset: 0
       binary_in_confirm_cmd: 1
       failure_point: 9
@@ -2073,7 +2073,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/transformerUG3_treetech.cfg': vers
  Modbus type = TCP
  Modbus ip = 172.16.6.120
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 1
  Modbus numDevs = 1
@@ -2136,7 +2136,7 @@ configGw {
       baud_rate: ""
       num_devs: 1
       addr: 1
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "1;"
       timeout: 1
       inter_polling: 5
@@ -2153,12 +2153,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 426388816
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 21945
+      master_id3: 0
       analog_out_point_offset: 0
       binary_in_confirm_cmd: 1
       failure_point: 9
@@ -2188,7 +2188,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/transformerUG4_treetech.cfg': vers
  Modbus type = TCP
  Modbus ip = 172.16.6.130
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 1
  Modbus numDevs = 1
@@ -2251,7 +2251,7 @@ configGw {
       baud_rate: ""
       num_devs: 1
       addr: 1
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "1;"
       timeout: 1
       inter_polling: 5
@@ -2268,12 +2268,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 2711626032
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 21913
+      master_id3: 0
       analog_out_point_offset: 0
       binary_in_confirm_cmd: 1
       failure_point: 9
@@ -2303,7 +2303,7 @@ Configuration loaded from 'Mapas_Francisco_Sa/transformerUG5_treetech.cfg': vers
  Modbus type = TCP
  Modbus ip = 172.16.6.140
  Modbus port = 502
- Modbus device = 
+ Modbus device = /dev/ttyUSB0
  Modbus baud rate = 
  Modbus address = 1
  Modbus numDevs = 1
@@ -2366,7 +2366,7 @@ configGw {
       baud_rate: ""
       num_devs: 1
       addr: 1
-      device: ""
+      device: "/dev/ttyUSB0"
       address_list: "1;"
       timeout: 1
       inter_polling: 5
@@ -2383,12 +2383,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 198298720
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 21898
+      master_id3: 0
       analog_out_point_offset: 0
       binary_in_confirm_cmd: 1
       failure_point: 9
@@ -2477,7 +2477,7 @@ configGw {
     modbus_cfg {
       mode: RTU_
       ip: "192.168.20.17"
-      port: 3729817594
+      port: 502
       baud_rate: "9600N2"
       num_devs: 1
       addr: 1
@@ -2498,12 +2498,12 @@ configGw {
       ip3: ""
       port1: 22000
       port2: 21000
-      port3: 1730487552
+      port3: 0
       uns_conn_token: 2
       uns_addr: 0
       master_id1: 0
       master_id2: 1
-      master_id3: 22000
+      master_id3: 0
       analog_out_point_offset: 0
       binary_in_confirm_cmd: 1
       failure_point: 4294967295
@@ -2524,3 +2524,4 @@ configGw {
 }
 
 >> MqttServerWrapper - Message (22) successfully published!
+
