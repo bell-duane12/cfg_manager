@@ -1,0 +1,2526 @@
+Configuration loaded from 'Mapas_Francisco_Sa/inverterUG1A.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.101
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 1
+ Modbus numDevs = 8
+ Modbus addressList = 1, 4, 6, 5, 7, 8, 3, 2;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 51
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 1010
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = false
+ Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePoint = 10
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 1
+ Classmap type id = 1
+ Classmap map id = 1
+ Classmap name = inv_sung_125
+ Classmap map path = inverterFSA.cfg
+ Classmap map description Mapa Inversor Sungrow 125KW
+Classmap configuration loaded...
+ Equipment name = inverter UG1
+ Equipment manufacturer = Sungrow
+ Equipment model = 125KW
+ Equipment ug = 1
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 1
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "inverter UG1"
+    manufacturer: "Sungrow"
+    model: "125KW"
+    class_id: 1
+    ug: 1
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.101"
+      port: 502
+      baud_rate: ""
+      num_devs: 8
+      addr: 1
+      device: ""
+      address_list: "1, 4, 6, 5, 7, 8, 3, 2;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 1010
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 2537531392
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 21963
+      analog_out_point_offset: 51
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 1
+      typeId: 1
+      mapId: 1
+      name: "inv_sung_125"
+      version: "0.0.2"
+      classmap_description: "Mapa Inversor Sungrow 125KW"
+      classmap_path: "inverterFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (1) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/inverterUG2A.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.111
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 1
+ Modbus numDevs = 8
+ Modbus addressList = 1, 2, 3, 4, 5, 6, 7, 8;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 51
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 1110
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = false
+ Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePoint = 10
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 1
+ Classmap type id = 1
+ Classmap map id = 1
+ Classmap name = inv_sung_125
+ Classmap map path = inverterFSA.cfg
+ Classmap map description Mapa Inversor Sungrow 125KW
+Classmap configuration loaded...
+ Equipment name = inverter UG2
+ Equipment manufacturer = Sungrow
+ Equipment model = 125KW
+ Equipment ug = 2
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 2
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "inverter UG2"
+    manufacturer: "Sungrow"
+    model: "125KW"
+    class_id: 1
+    ug: 2
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.111"
+      port: 502
+      baud_rate: ""
+      num_devs: 8
+      addr: 1
+      device: ""
+      address_list: "1, 2, 3, 4, 5, 6, 7, 8;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 1110
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 1611679424
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 21921
+      analog_out_point_offset: 51
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 1
+      typeId: 1
+      mapId: 1
+      name: "inv_sung_125"
+      version: "0.0.2"
+      classmap_description: "Mapa Inversor Sungrow 125KW"
+      classmap_path: "inverterFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (2) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/inverterUG3A.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.121
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 1
+ Modbus numDevs = 8
+ Modbus addressList = 1, 2, 3, 4, 5, 6, 7, 8;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 51
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 1210
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = false
+ Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePoint = 10
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 1
+ Classmap type id = 1
+ Classmap map id = 1
+ Classmap name = inv_sung_125
+ Classmap map path = inverterFSA.cfg
+ Classmap map description Mapa Inversor Sungrow 125KW
+Classmap configuration loaded...
+ Equipment name = inverter UG3
+ Equipment manufacturer = Sungrow
+ Equipment model = 125KW
+ Equipment ug = 3
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 3
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "inverter UG3"
+    manufacturer: "Sungrow"
+    model: "125KW"
+    class_id: 1
+    ug: 3
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.121"
+      port: 502
+      baud_rate: ""
+      num_devs: 8
+      addr: 1
+      device: ""
+      address_list: "1, 2, 3, 4, 5, 6, 7, 8;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 1210
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 513784320
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 21853
+      analog_out_point_offset: 51
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 1
+      typeId: 1
+      mapId: 1
+      name: "inv_sung_125"
+      version: "0.0.2"
+      classmap_description: "Mapa Inversor Sungrow 125KW"
+      classmap_path: "inverterFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (3) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/inverterUG4A.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.131
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 1
+ Modbus numDevs = 8
+ Modbus addressList = 1, 2, 3, 4, 5, 6, 7, 8;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 51
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 1310
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = false
+ Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePoint = 10
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 1
+ Classmap type id = 1
+ Classmap map id = 1
+ Classmap name = inv_sung_125
+ Classmap map path = inverterFSA.cfg
+ Classmap map description Mapa Inversor Sungrow 125KW
+Classmap configuration loaded...
+ Equipment name = inverter UG4
+ Equipment manufacturer = Sungrow
+ Equipment model = 125KW
+ Equipment ug = 4
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 4
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "inverter UG4"
+    manufacturer: "Sungrow"
+    model: "125KW"
+    class_id: 1
+    ug: 4
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.131"
+      port: 502
+      baud_rate: ""
+      num_devs: 8
+      addr: 1
+      device: ""
+      address_list: "1, 2, 3, 4, 5, 6, 7, 8;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 1310
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 1671811712
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 22032
+      analog_out_point_offset: 51
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 1
+      typeId: 1
+      mapId: 1
+      name: "inv_sung_125"
+      version: "0.0.2"
+      classmap_description: "Mapa Inversor Sungrow 125KW"
+      classmap_path: "inverterFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (4) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/inverterUG5A.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.141
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 1
+ Modbus numDevs = 8
+ Modbus addressList = 1, 2, 3, 4, 5, 6, 7, 8;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 51
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 1410
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = false
+ Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePoint = 10
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 1
+ Classmap type id = 1
+ Classmap map id = 1
+ Classmap name = inv_sung_125
+ Classmap map path = inverterFSA.cfg
+ Classmap map description Mapa Inversor Sungrow 125KW
+Classmap configuration loaded...
+ Equipment name = inverter UG5
+ Equipment manufacturer = Sungrow
+ Equipment model = 125KW
+ Equipment ug = 5
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 5
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "inverter UG5"
+    manufacturer: "Sungrow"
+    model: "125KW"
+    class_id: 1
+    ug: 5
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.141"
+      port: 502
+      baud_rate: ""
+      num_devs: 8
+      addr: 1
+      device: ""
+      address_list: "1, 2, 3, 4, 5, 6, 7, 8;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 1410
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 3641395488
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 22002
+      analog_out_point_offset: 51
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 1
+      typeId: 1
+      mapId: 1
+      name: "inv_sung_125"
+      version: "0.0.2"
+      classmap_description: "Mapa Inversor Sungrow 125KW"
+      classmap_path: "inverterFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (5) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/meterNUCD_EC1.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.200
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 1
+ Modbus numDevs = 1
+ Modbus addressList = 1;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 0
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 200
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = true
+ Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePoint = 9
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 2
+ Classmap type id = 7
+ Classmap map id = 2
+ Classmap name = nucd
+ Classmap map path = meter_nucdFSA.cfg
+ Classmap map description Mapa nUCD2387/ET-med
+Classmap configuration loaded...
+ Equipment name = medidor EC1
+ Equipment manufacturer = ati
+ Equipment model = nUCD2387/ET-med
+ Equipment ug = 1
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 6
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "medidor EC1"
+    manufacturer: "ati"
+    model: "nUCD2387/ET-med"
+    class_id: 2
+    ug: 1
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.200"
+      port: 502
+      baud_rate: ""
+      num_devs: 1
+      addr: 1
+      device: ""
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 200
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 3449849984
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 21931
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 2
+      typeId: 7
+      mapId: 2
+      name: "nucd"
+      version: "0.0.2"
+      classmap_description: "Mapa nUCD2387/ET-med"
+      classmap_path: "meter_nucdFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (6) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/meterNUCD_EC2.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.201
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 1
+ Modbus numDevs = 1
+ Modbus addressList = 1;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 0
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 201
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = true
+ Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePoint = 9
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 2
+ Classmap type id = 7
+ Classmap map id = 2
+ Classmap name = nucd
+ Classmap map path = meter_nucdFSA.cfg
+ Classmap map description Mapa nUCD2387/ET-med
+Classmap configuration loaded...
+ Equipment name = medidor EC2
+ Equipment manufacturer = ati
+ Equipment model = nUCD2387/ET-med
+ Equipment ug = 2
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 7
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "medidor EC2"
+    manufacturer: "ati"
+    model: "nUCD2387/ET-med"
+    class_id: 2
+    ug: 2
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.201"
+      port: 502
+      baud_rate: ""
+      num_devs: 1
+      addr: 1
+      device: ""
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 201
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 4244023216
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 22066
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 2
+      typeId: 7
+      mapId: 2
+      name: "nucd"
+      version: "0.0.2"
+      classmap_description: "Mapa nUCD2387/ET-med"
+      classmap_path: "meter_nucdFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (7) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/meterNUCD_EC3.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.202
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 1
+ Modbus numDevs = 1
+ Modbus addressList = 1;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 0
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 202
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = true
+ Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePoint = 9
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 2
+ Classmap type id = 7
+ Classmap map id = 2
+ Classmap name = nucd
+ Classmap map path = meter_nucdFSA.cfg
+ Classmap map description Mapa nUCD2387/ET-med
+Classmap configuration loaded...
+ Equipment name = medidor EC3
+ Equipment manufacturer = ati
+ Equipment model = nUCD2387/ET-med
+ Equipment ug = 3
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 8
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "medidor EC3"
+    manufacturer: "ati"
+    model: "nUCD2387/ET-med"
+    class_id: 2
+    ug: 3
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.202"
+      port: 502
+      baud_rate: ""
+      num_devs: 1
+      addr: 1
+      device: ""
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 202
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 3929616464
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 21953
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 2
+      typeId: 7
+      mapId: 2
+      name: "nucd"
+      version: "0.0.2"
+      classmap_description: "Mapa nUCD2387/ET-med"
+      classmap_path: "meter_nucdFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (8) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/meterNUCD_EC4.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.203
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 1
+ Modbus numDevs = 1
+ Modbus addressList = 1;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 0
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 203
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = true
+ Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePoint = 9
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 2
+ Classmap type id = 7
+ Classmap map id = 2
+ Classmap name = nucd
+ Classmap map path = meter_nucdFSA.cfg
+ Classmap map description Mapa nUCD2387/ET-med
+Classmap configuration loaded...
+ Equipment name = medidor EC4
+ Equipment manufacturer = ati
+ Equipment model = nUCD2387/ET-med
+ Equipment ug = 4
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 9
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "medidor EC4"
+    manufacturer: "ati"
+    model: "nUCD2387/ET-med"
+    class_id: 2
+    ug: 4
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.203"
+      port: 502
+      baud_rate: ""
+      num_devs: 1
+      addr: 1
+      device: ""
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 203
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 1429690064
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 22056
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 2
+      typeId: 7
+      mapId: 2
+      name: "nucd"
+      version: "0.0.2"
+      classmap_description: "Mapa nUCD2387/ET-med"
+      classmap_path: "meter_nucdFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (9) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/meterNUCD_EC5.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.204
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 1
+ Modbus numDevs = 1
+ Modbus addressList = 1;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 0
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 204
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 162.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = true
+ Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePoint = 9
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 2
+ Classmap type id = 7
+ Classmap map id = 2
+ Classmap name = nucd
+ Classmap map path = meter_nucdFSA.cfg
+ Classmap map description Mapa nUCD2387/ET-med
+Classmap configuration loaded...
+ Equipment name = medidor EC5
+ Equipment manufacturer = ati
+ Equipment model = nUCD2387/ET-med
+ Equipment ug = 5
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 10
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "medidor EC5"
+    manufacturer: "ati"
+    model: "nUCD2387/ET-med"
+    class_id: 2
+    ug: 5
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.204"
+      port: 502
+      baud_rate: ""
+      num_devs: 1
+      addr: 1
+      device: ""
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 204
+      ip1: "172.16.6.253"
+      ip2: "162.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 1863331184
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 21975
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 2
+      typeId: 7
+      mapId: 2
+      name: "nucd"
+      version: "0.0.2"
+      classmap_description: "Mapa nUCD2387/ET-med"
+      classmap_path: "meter_nucdFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (10) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/station_1.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.23
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 1
+ Modbus numDevs = 1
+ Modbus addressList = 1;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 10
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 0
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 251
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = false
+ Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePoint = 10
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 3
+ Classmap type id = 5
+ Classmap map id = 3
+ Classmap name = station_1
+ Classmap map path = station_1FSA.cfg
+ Classmap map description Mapa Sol. Hyl
+Classmap configuration loaded...
+ Equipment name = Estação Solarimétrica
+ Equipment manufacturer = Hyl
+ Equipment model = xxxx
+ Equipment ug = 1
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 11
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "Esta\303\247\303\243o Solarim\303\251trica"
+    manufacturer: "Hyl"
+    model: "xxxx"
+    class_id: 3
+    ug: 1
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.23"
+      port: 502
+      baud_rate: ""
+      num_devs: 1
+      addr: 1
+      device: ""
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 10
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 251
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 3195563520
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 21869
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 3
+      typeId: 5
+      mapId: 3
+      name: "station_1"
+      version: "0.0.2"
+      classmap_description: "Mapa Sol. Hyl"
+      classmap_path: "station_1FSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (11) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/stringboxUG1A.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.101
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 9
+ Modbus numDevs = 8
+ Modbus addressList = 9, 10, 11, 12, 13, 14, 15, 16;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 0
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 10100
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = false
+ Dnp3FailurePointType = ANALOG INPUT
+ Dnp3FailurePoint = 10
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 4
+ Classmap type id = 10
+ Classmap map id = 4
+ Classmap name = stringbox
+ Classmap map path = stringboxFSA.cfg
+ Classmap map description Mapa Stringbox Sungrow
+Classmap configuration loaded...
+ Equipment name = stringbox UG1
+ Equipment manufacturer = Sungrow
+ Equipment model = xptz
+ Equipment ug = 1
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 12
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "stringbox UG1"
+    manufacturer: "Sungrow"
+    model: "xptz"
+    class_id: 4
+    ug: 1
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.101"
+      port: 502
+      baud_rate: ""
+      num_devs: 8
+      addr: 9
+      device: ""
+      address_list: "9, 10, 11, 12, 13, 14, 15, 16;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 10100
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 150477456
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 22000
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_COMMAND_
+    }
+    classmap {
+      classId: 4
+      typeId: 10
+      mapId: 4
+      name: "stringbox"
+      version: "0.0.2"
+      classmap_description: "Mapa Stringbox Sungrow"
+      classmap_path: "stringboxFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (12) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/stringboxUG2A.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.111
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 9
+ Modbus numDevs = 8
+ Modbus addressList = 9, 10, 11, 12, 13, 14, 15, 16;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 0
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 11100
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = false
+ Dnp3FailurePointType = ANALOG INPUT
+ Dnp3FailurePoint = 10
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 4
+ Classmap type id = 10
+ Classmap map id = 4
+ Classmap name = stringbox
+ Classmap map path = stringboxFSA.cfg
+ Classmap map description Mapa Stringbox Sungrow
+Classmap configuration loaded...
+ Equipment name = stringbox UG2
+ Equipment manufacturer = Sungrow
+ Equipment model = xptz
+ Equipment ug = 2
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 13
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "stringbox UG2"
+    manufacturer: "Sungrow"
+    model: "xptz"
+    class_id: 4
+    ug: 2
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.111"
+      port: 502
+      baud_rate: ""
+      num_devs: 8
+      addr: 9
+      device: ""
+      address_list: "9, 10, 11, 12, 13, 14, 15, 16;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 11100
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 1910606704
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 22040
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_COMMAND_
+    }
+    classmap {
+      classId: 4
+      typeId: 10
+      mapId: 4
+      name: "stringbox"
+      version: "0.0.2"
+      classmap_description: "Mapa Stringbox Sungrow"
+      classmap_path: "stringboxFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (13) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/stringboxUG3A.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.121
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 9
+ Modbus numDevs = 8
+ Modbus addressList = 9, 10, 11, 12, 13, 14, 15, 16;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 0
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 12100
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = false
+ Dnp3FailurePointType = ANALOG INPUT
+ Dnp3FailurePoint = 10
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 4
+ Classmap type id = 10
+ Classmap map id = 4
+ Classmap name = stringbox
+ Classmap map path = stringboxFSA.cfg
+ Classmap map description Mapa Stringbox Sungrow
+Classmap configuration loaded...
+ Equipment name = stringbox UG3
+ Equipment manufacturer = Sungrow
+ Equipment model = xptz
+ Equipment ug = 3
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 14
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "stringbox UG3"
+    manufacturer: "Sungrow"
+    model: "xptz"
+    class_id: 4
+    ug: 3
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.121"
+      port: 502
+      baud_rate: ""
+      num_devs: 8
+      addr: 9
+      device: ""
+      address_list: "9, 10, 11, 12, 13, 14, 15, 16;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 12100
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 2779590240
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 21874
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_COMMAND_
+    }
+    classmap {
+      classId: 4
+      typeId: 10
+      mapId: 4
+      name: "stringbox"
+      version: "0.0.2"
+      classmap_description: "Mapa Stringbox Sungrow"
+      classmap_path: "stringboxFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (14) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/stringboxUG4A.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.131
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 9
+ Modbus numDevs = 8
+ Modbus addressList = 9, 10, 11, 12, 13, 14, 15, 16;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 0
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 13100
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = false
+ Dnp3FailurePointType = ANALOG INPUT
+ Dnp3FailurePoint = 10
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 4
+ Classmap type id = 10
+ Classmap map id = 4
+ Classmap name = stringbox
+ Classmap map path = stringboxFSA.cfg
+ Classmap map description Mapa Stringbox Sungrow
+Classmap configuration loaded...
+ Equipment name = stringbox UG4
+ Equipment manufacturer = Sungrow
+ Equipment model = xptz
+ Equipment ug = 4
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 15
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "stringbox UG4"
+    manufacturer: "Sungrow"
+    model: "xptz"
+    class_id: 4
+    ug: 4
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.131"
+      port: 502
+      baud_rate: ""
+      num_devs: 8
+      addr: 9
+      device: ""
+      address_list: "9, 10, 11, 12, 13, 14, 15, 16;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 13100
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 2579030256
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 22087
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_COMMAND_
+    }
+    classmap {
+      classId: 4
+      typeId: 10
+      mapId: 4
+      name: "stringbox"
+      version: "0.0.2"
+      classmap_description: "Mapa Stringbox Sungrow"
+      classmap_path: "stringboxFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (15) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/stringboxUG5A.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.141
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 9
+ Modbus numDevs = 8
+ Modbus addressList = 9, 10, 11, 12, 13, 14, 15, 16;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 0
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 14100
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = false
+ Dnp3FailurePointType = ANALOG INPUT
+ Dnp3FailurePoint = 10
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 4
+ Classmap type id = 10
+ Classmap map id = 4
+ Classmap name = stringbox
+ Classmap map path = stringboxFSA.cfg
+ Classmap map description Mapa Stringbox Sungrow
+Classmap configuration loaded...
+ Equipment name = stringbox UG5
+ Equipment manufacturer = Sungrow
+ Equipment model = xptz
+ Equipment ug = 5
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 16
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "stringbox UG5"
+    manufacturer: "Sungrow"
+    model: "xptz"
+    class_id: 4
+    ug: 5
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.141"
+      port: 502
+      baud_rate: ""
+      num_devs: 8
+      addr: 9
+      device: ""
+      address_list: "9, 10, 11, 12, 13, 14, 15, 16;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 14100
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 3885609488
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 21863
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 10
+      dnp3_failure_point_val: 0
+      check_failure: false
+      dnp3_failure_point_type: OBJ_COMMAND_
+    }
+    classmap {
+      classId: 4
+      typeId: 10
+      mapId: 4
+      name: "stringbox"
+      version: "0.0.2"
+      classmap_description: "Mapa Stringbox Sungrow"
+      classmap_path: "stringboxFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (16) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/transformerUG1_treetech.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.100
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 1
+ Modbus numDevs = 1
+ Modbus addressList = 1;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 0
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 100
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = true
+ Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePoint = 9
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 5
+ Classmap type id = 6
+ Classmap map id = 5
+ Classmap name = transformer
+ Classmap map path = transformerFSA.cfg
+ Classmap map description Mapa Transformer Treetech
+Classmap configuration loaded...
+ Equipment name = transformer UG1
+ Equipment manufacturer = Treetech
+ Equipment model = LAD
+ Equipment ug = 1
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 17
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "transformer UG1"
+    manufacturer: "Treetech"
+    model: "LAD"
+    class_id: 5
+    ug: 1
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.100"
+      port: 502
+      baud_rate: ""
+      num_devs: 1
+      addr: 1
+      device: ""
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 100
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 2692801920
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 21956
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 5
+      typeId: 6
+      mapId: 5
+      name: "transformer"
+      version: "0.0.2"
+      classmap_description: "Mapa Transformer Treetech"
+      classmap_path: "transformerFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (17) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/transformerUG2_treetech.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.110
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 1
+ Modbus numDevs = 1
+ Modbus addressList = 1;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 0
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 110
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = true
+ Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePoint = 9
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 5
+ Classmap type id = 6
+ Classmap map id = 5
+ Classmap name = transformer
+ Classmap map path = transformerFSA.cfg
+ Classmap map description Mapa Transformer Treetech
+Classmap configuration loaded...
+ Equipment name = transformer UG1
+ Equipment manufacturer = Treetech
+ Equipment model = LAD
+ Equipment ug = 2
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 18
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "transformer UG1"
+    manufacturer: "Treetech"
+    model: "LAD"
+    class_id: 5
+    ug: 2
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.110"
+      port: 502
+      baud_rate: ""
+      num_devs: 1
+      addr: 1
+      device: ""
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 110
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 347837456
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 21886
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 5
+      typeId: 6
+      mapId: 5
+      name: "transformer"
+      version: "0.0.2"
+      classmap_description: "Mapa Transformer Treetech"
+      classmap_path: "transformerFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (18) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/transformerUG3_treetech.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.120
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 1
+ Modbus numDevs = 1
+ Modbus addressList = 1;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 0
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 120
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = true
+ Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePoint = 9
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 5
+ Classmap type id = 6
+ Classmap map id = 5
+ Classmap name = transformer
+ Classmap map path = transformerFSA.cfg
+ Classmap map description Mapa Transformer Treetech
+Classmap configuration loaded...
+ Equipment name = transformer UG3
+ Equipment manufacturer = Treetech
+ Equipment model = LAD
+ Equipment ug = 3
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 19
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "transformer UG3"
+    manufacturer: "Treetech"
+    model: "LAD"
+    class_id: 5
+    ug: 3
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.120"
+      port: 502
+      baud_rate: ""
+      num_devs: 1
+      addr: 1
+      device: ""
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 120
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 426388816
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 21945
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 5
+      typeId: 6
+      mapId: 5
+      name: "transformer"
+      version: "0.0.2"
+      classmap_description: "Mapa Transformer Treetech"
+      classmap_path: "transformerFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (19) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/transformerUG4_treetech.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.130
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 1
+ Modbus numDevs = 1
+ Modbus addressList = 1;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 0
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 130
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = true
+ Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePoint = 9
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 5
+ Classmap type id = 6
+ Classmap map id = 5
+ Classmap name = transformer
+ Classmap map path = transformerFSA.cfg
+ Classmap map description Mapa Transformer Treetech
+Classmap configuration loaded...
+ Equipment name = transformer UG4
+ Equipment manufacturer = Treetech
+ Equipment model = LAD
+ Equipment ug = 4
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 20
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "transformer UG4"
+    manufacturer: "Treetech"
+    model: "LAD"
+    class_id: 5
+    ug: 4
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.130"
+      port: 502
+      baud_rate: ""
+      num_devs: 1
+      addr: 1
+      device: ""
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 130
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 2711626032
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 21913
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 5
+      typeId: 6
+      mapId: 5
+      name: "transformer"
+      version: "0.0.2"
+      classmap_description: "Mapa Transformer Treetech"
+      classmap_path: "transformerFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (20) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/transformerUG5_treetech.cfg': version = 0.0.2
+
+ Modbus type = TCP
+ Modbus ip = 172.16.6.140
+ Modbus port = 502
+ Modbus device = 
+ Modbus baud rate = 
+ Modbus address = 1
+ Modbus numDevs = 1
+ Modbus addressList = 1;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 5
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 2
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 0
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 140
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = true
+ Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePoint = 9
+ Dnp3FailurePointValue = 0
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 5
+ Classmap type id = 6
+ Classmap map id = 5
+ Classmap name = transformer
+ Classmap map path = transformerFSA.cfg
+ Classmap map description Mapa Transformer Treetech
+Classmap configuration loaded...
+ Equipment name = transformer UG5
+ Equipment manufacturer = Treetech
+ Equipment model = LAD
+ Equipment ug = 5
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 21
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "transformer UG5"
+    manufacturer: "Treetech"
+    model: "LAD"
+    class_id: 5
+    ug: 5
+    modbus_cfg {
+      mode: TCP_
+      ip: "172.16.6.140"
+      port: 502
+      baud_rate: ""
+      num_devs: 1
+      addr: 1
+      device: ""
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 5
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 2
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 140
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 198298720
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 21898
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 9
+      dnp3_failure_point_val: 0
+      check_failure: true
+      dnp3_failure_point_type: OBJ_COUNTER_
+    }
+    classmap {
+      classId: 5
+      typeId: 6
+      mapId: 5
+      name: "transformer"
+      version: "0.0.2"
+      classmap_description: "Mapa Transformer Treetech"
+      classmap_path: "transformerFSA.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (21) successfully published!
+>> MqttServerWrapper - disconnection(0)
+>> MqttServerWrapper - connected with server
+>> MqttServerWrapper - Subscribe
+>> MqttServerWrapper - Subscribe
+Configuration loaded from 'Mapas_Francisco_Sa/utr3288io.cfg': version = 0.0.2
+
+ Modbus type = RTU
+ Modbus ip = 192.168.20.17
+ Modbus port = 502
+ Modbus device = /dev/ttyS4
+ Modbus baud rate = 9600N2
+ Modbus address = 1
+ Modbus numDevs = 1
+ Modbus addressList = 1;
+ Modbus timeout = 1
+Modbus configuration loaded...
+ Modbus inter polling = 10
+ Modbus intra polling = 2000
+ Modbus retry timeout = 3000
+ Modbus retries = 1
+ Modbus poll semaphore = false
+ Modbus semaphore file = /tmp/mdbProxyTrigger.cmd
+Modbus Poller configuration loaded...
+ DNP3 Analog Output Point Offset = 0
+ DNP3 Binary Input Confirm Command = 1
+ DNP3 Slave Address = 252
+ DNP3 Unsolicited Address = 0
+ DNP3 Unsolicited Connection Token = 2
+ DNP3 Master ID #1: 0
+ DNP3 Master IP #1: 172.16.6.253
+ DNP3 Master Port #1: 22000
+ DNP3 Master ID #2: 1
+ DNP3 Master IP #2: 172.16.6.253
+ DNP3 Master Port #2: 21000
+Dnp3 configuration loaded...
+ CheckFailure = false
+ Dnp3FailurePointType = NONE
+ Dnp3FailurePoint = 4294967295
+ Dnp3FailurePointValue = 18446744073709551615
+Failure configuration loaded...
+ Classmap version = 0.0.2
+ Classmap class id = 6
+ Classmap type id = 11
+ Classmap map id = 6
+ Classmap name = utr3288io
+ Classmap map path = utr3288io.cfg
+ Classmap map description Mapa UTR3288io
+Classmap configuration loaded...
+ Equipment name = UTR3288io
+ Equipment manufacturer = ati
+ Equipment model = xptz
+ Equipment ug = 1
+Equipment configuration loaded...
+Mensagem a ser publicada na fila config/4/tx: 
+header {
+  ticket: 22
+  gwid: 4
+}
+configGw {
+  devices {
+    name: "UTR3288io"
+    manufacturer: "ati"
+    model: "xptz"
+    class_id: 6
+    ug: 1
+    modbus_cfg {
+      mode: RTU_
+      ip: "192.168.20.17"
+      port: 3729817594
+      baud_rate: "9600N2"
+      num_devs: 1
+      addr: 1
+      device: "/dev/ttyS4"
+      address_list: "1;"
+      timeout: 1
+      inter_polling: 10
+      intra_polling: 2000
+      retry_timeout: 3000
+      retries: 1
+      poll_trigger: 0
+      trigger_path: "/tmp/mdbProxyTrigger.cmd"
+    }
+    dnp3_cfg {
+      outstation_id: 252
+      ip1: "172.16.6.253"
+      ip2: "172.16.6.253"
+      ip3: ""
+      port1: 22000
+      port2: 21000
+      port3: 1730487552
+      uns_conn_token: 2
+      uns_addr: 0
+      master_id1: 0
+      master_id2: 1
+      master_id3: 22000
+      analog_out_point_offset: 0
+      binary_in_confirm_cmd: 1
+      failure_point: 4294967295
+      dnp3_failure_point_val: -1
+      check_failure: false
+      dnp3_failure_point_type: OBJ_NONE_
+    }
+    classmap {
+      classId: 6
+      typeId: 11
+      mapId: 6
+      name: "utr3288io"
+      version: "0.0.2"
+      classmap_description: "Mapa UTR3288io"
+      classmap_path: "utr3288io.cfg"
+    }
+  }
+}
+
+>> MqttServerWrapper - Message (22) successfully published!
