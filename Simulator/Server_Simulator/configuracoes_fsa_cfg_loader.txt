@@ -30,7 +30,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = false
- Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePointType = OBJ_COUNTER
  Dnp3FailurePoint = 10
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -145,7 +145,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = false
- Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePointType = OBJ_COUNTER
  Dnp3FailurePoint = 10
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -260,7 +260,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = false
- Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePointType = OBJ_COUNTER
  Dnp3FailurePoint = 10
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -375,7 +375,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = false
- Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePointType = OBJ_COUNTER
  Dnp3FailurePoint = 10
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -490,7 +490,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = false
- Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePointType = OBJ_COUNTER
  Dnp3FailurePoint = 10
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -605,7 +605,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = true
- Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePointType = OBJ_COUNTER
  Dnp3FailurePoint = 9
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -720,7 +720,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = true
- Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePointType = OBJ_COUNTER
  Dnp3FailurePoint = 9
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -835,7 +835,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = true
- Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePointType = OBJ_COUNTER
  Dnp3FailurePoint = 9
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -950,7 +950,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = true
- Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePointType = OBJ_COUNTER
  Dnp3FailurePoint = 9
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -1065,7 +1065,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = true
- Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePointType = OBJ_COUNTER
  Dnp3FailurePoint = 9
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -1180,7 +1180,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = false
- Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePointType = OBJ_COUNTER
  Dnp3FailurePoint = 10
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -1295,7 +1295,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = false
- Dnp3FailurePointType = ANALOG INPUT
+ Dnp3FailurePointType = OBJ_ANALOG
  Dnp3FailurePoint = 10
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -1359,7 +1359,7 @@ configGw {
       failure_point: 10
       dnp3_failure_point_val: 0
       check_failure: false
-      dnp3_failure_point_type: OBJ_COMMAND_
+      dnp3_failure_point_type: OBJ_ANALOG_
     }
     classmap {
       classId: 4
@@ -1410,7 +1410,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = false
- Dnp3FailurePointType = ANALOG INPUT
+ Dnp3FailurePointType = OBJ_ANALOG
  Dnp3FailurePoint = 10
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -1474,7 +1474,7 @@ configGw {
       failure_point: 10
       dnp3_failure_point_val: 0
       check_failure: false
-      dnp3_failure_point_type: OBJ_COMMAND_
+      dnp3_failure_point_type: OBJ_ANALOG_
     }
     classmap {
       classId: 4
@@ -1525,7 +1525,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = false
- Dnp3FailurePointType = ANALOG INPUT
+ Dnp3FailurePointType = OBJ_ANALOG
  Dnp3FailurePoint = 10
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -1589,7 +1589,7 @@ configGw {
       failure_point: 10
       dnp3_failure_point_val: 0
       check_failure: false
-      dnp3_failure_point_type: OBJ_COMMAND_
+      dnp3_failure_point_type: OBJ_ANALOG_
     }
     classmap {
       classId: 4
@@ -1640,7 +1640,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = false
- Dnp3FailurePointType = ANALOG INPUT
+ Dnp3FailurePointType = OBJ_ANALOG
  Dnp3FailurePoint = 10
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -1704,7 +1704,7 @@ configGw {
       failure_point: 10
       dnp3_failure_point_val: 0
       check_failure: false
-      dnp3_failure_point_type: OBJ_COMMAND_
+      dnp3_failure_point_type: OBJ_ANALOG_
     }
     classmap {
       classId: 4
@@ -1755,7 +1755,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = false
- Dnp3FailurePointType = ANALOG INPUT
+ Dnp3FailurePointType = OBJ_ANALOG
  Dnp3FailurePoint = 10
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -1819,7 +1819,7 @@ configGw {
       failure_point: 10
       dnp3_failure_point_val: 0
       check_failure: false
-      dnp3_failure_point_type: OBJ_COMMAND_
+      dnp3_failure_point_type: OBJ_ANALOG_
     }
     classmap {
       classId: 4
@@ -1870,7 +1870,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = true
- Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePointType = OBJ_COUNTER
  Dnp3FailurePoint = 9
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -1985,7 +1985,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = true
- Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePointType = OBJ_COUNTER
  Dnp3FailurePoint = 9
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -2100,7 +2100,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = true
- Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePointType = OBJ_COUNTER
  Dnp3FailurePoint = 9
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -2215,7 +2215,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = true
- Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePointType = OBJ_COUNTER
  Dnp3FailurePoint = 9
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -2330,7 +2330,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = true
- Dnp3FailurePointType = BINARY COUNTER
+ Dnp3FailurePointType = OBJ_COUNTER
  Dnp3FailurePoint = 9
  Dnp3FailurePointValue = 0
 Failure configuration loaded...
@@ -2445,7 +2445,7 @@ Modbus Poller configuration loaded...
  DNP3 Master Port #2: 21000
 Dnp3 configuration loaded...
  CheckFailure = false
- Dnp3FailurePointType = NONE
+ Dnp3FailurePointType = OBJ_NONE
  Dnp3FailurePoint = 4294967295
  Dnp3FailurePointValue = 18446744073709551615
 Failure configuration loaded...

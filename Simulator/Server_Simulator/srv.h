@@ -23,6 +23,35 @@ typedef enum {
   OBJ_NONE = 6,
 } TDnp3ObjectType;
 
+inline std::ostream& operator<<(std::ostream& out, const TDnp3ObjectType& value) {
+      
+  switch(value) {
+  
+    case OBJ_BINARY:
+      out << "OBJ_BINARY";
+      break;     
+    case OBJ_COUNTER:
+      out << "OBJ_COUNTER";
+      break;
+    case OBJ_ANALOG:
+      out << "OBJ_ANALOG";
+      break;
+    case OBJ_COMMAND:
+      out << "OBJ_COMMAND";
+      break;
+    case OBJ_REGULATION:
+      out << "OBJ_REGULATION";
+      break;
+    case OBJ_NONE:
+      out << "OBJ_NONE";
+      break;
+          
+  }
+    
+  return out;
+  
+}
+
 typedef struct {
   unsigned int dnp3_seq;
   unsigned int outstation_id;
